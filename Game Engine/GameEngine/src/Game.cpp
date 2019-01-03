@@ -1,3 +1,5 @@
+/*! \file This will hold the class definitions for the class Game.h */
+
 #include "Game.h"
 #include "TransformComponent.h"
 #include "ColourComponent.h"
@@ -35,7 +37,7 @@ Game::~Game()
 /*! Update : Called once every frame.
 *
 */
-void Game::update()
+void Game::m_Update()
 {
 
 }
@@ -44,7 +46,7 @@ void Game::update()
 /*! Render : Will draw all items at the end of the frame.
 *
 */
-void Game::render()
+void Game::m_Render()
 {
 	float redValue = 0, greenValue = 0, blueValue = 0;
 
@@ -61,10 +63,10 @@ void Game::render()
 		blueValue = m_playerBackground.getComponent<BlueComponent>()->m_colourValue;
 	}
 
-	// e.g. pass object details to the engine to render the next frame
+	// Pass object details to the engine to render the next frame
 	m_engineInterfacePtr->renderColouredBackground(redValue, greenValue, blueValue);
 
-	// update the camera (probably don't need to do this each frame)
+	// Update Camera. 
 	m_engineInterfacePtr->setCamera(&m_camera);
 
 	// Render the current scene. 

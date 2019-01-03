@@ -73,8 +73,8 @@ bool GLFW_EngineCore::runEngine(Game& game)
 	while (!glfwWindowShouldClose(m_window))
 	{
 		game.m_inputHandler->handleInputs(m_keyBuffer);
-		game.update(); // update game logic
-		game.render(); // prepare game to send info to the renderer in engine core
+		game.m_Update(); // update game logic
+		game.m_Render(); // prepare game to send info to the renderer in engine core
 
 		// swap buffers
 		glfwSwapBuffers(m_window);

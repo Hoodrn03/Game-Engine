@@ -1,3 +1,7 @@
+/*! \file This will hold the main game loop; meanining it will control all of 
+*			rendering and updating of game logic for the engine.
+*/
+
 #pragma once
 
 #include "IEngineCore.h"
@@ -33,12 +37,17 @@ private:
 	/*! \var This will be the main game camera for the game. */
 	Camera m_camera;
 
+	/*! \var This will be the current scene loaded into the game engine. */
 	Scene* m_CurrentScene; 
 
 public:
 
+	/*! \var A pointer to the current engine core. */
 	IEngineCore* m_engineInterfacePtr;
 
+	/*! \var This will handle all of the user inputs for the engine, it will send messages to 
+	*			other functions when keys are pressed. 
+	*/
 	InputHandler* m_inputHandler;
 
 	// Member Functons 
@@ -49,12 +58,12 @@ public:
 	/*! Update : Called once every frame. 
 	*
 	*/
-	void update();
+	void m_Update();
 
 	//-----------------------------------------------------------//
 	/*! Render : Will draw all items at the end of the frame. 
 	*
 	*/
-	void render();
+	void m_Render();
 
 };
