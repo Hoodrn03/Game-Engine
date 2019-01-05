@@ -17,8 +17,10 @@
 */
 int main(int argc, char* argv[])
 {
+	/*! \var The engine core for the game. Yet to be selected.*/
 	IEngineCore* l_EngineCore;
 
+	/*! \var The name for the running game.*/
 	std::string l_GameName = "Game Engine"; 
 
 
@@ -32,6 +34,7 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
+	/*! \var The game to be run. */
 	Game l_GameEngine;
 
 	l_EngineCore->runEngine(l_GameEngine);

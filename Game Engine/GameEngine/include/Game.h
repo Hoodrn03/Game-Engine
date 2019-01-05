@@ -10,6 +10,7 @@
 #include "Camera.h"
 #include "Scene.h"
 
+/*! \class The main game loop, this holds both the update and render functions. */
 class Game
 {
 

@@ -1,11 +1,21 @@
+/*! \file This component will allow for a game object to be created within the game 
+*			engine. 
+*/
+
 #pragma once
+
 #include "Component.h"
 #include <unordered_map>
 #include <typeindex>
 
+/*! \class This component will allow for other components to be added to the object. */
 class GameObject
 {
 public:
+
+	/*! \template This will be used to get another componet which may be attatched to the 
+	*				game object; where type T is the component to find.  
+	*/
 	template <typename T>
 	T* getComponent()
 	{
@@ -23,6 +33,9 @@ public:
 		
 	}
 
+	/*! \template This will be used to add a new component onto this game object; where type T is 
+	*				the component to add. 
+	*/
 	template <typename T>
 	void addComponent(T* comp)
 	{
@@ -31,5 +44,9 @@ public:
 	}
 	
 private:
+
+	/*! \var This is a map of components, the first item is a pointer to a data type and the 
+	*			second is the type of component attacthed to the object. 
+	*/
 	std::unordered_map<std::type_index, Component*> m_components;
 };

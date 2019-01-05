@@ -16,6 +16,12 @@ GLFW_EngineCore::~GLFW_EngineCore()
 	glfwTerminate();
 }
 
+//-----------------------------------------------------------//
+/*! InitWindow : This will be used to create a window for the game.
+*Param One : The Width of the game window.
+*Param Two : The Height of the game window.
+*Param Three : The Name of the game window.
+*/
 bool GLFW_EngineCore::initWindow(int width, int height, std::string windowName)
 {
 	
@@ -63,6 +69,10 @@ bool GLFW_EngineCore::initWindow(int width, int height, std::string windowName)
 	return true;
 }
 
+//-----------------------------------------------------------//
+/*! RunEngine : This will be used to operate the game loop with the engine core.
+*Param One : The game loop to run.
+*/
 bool GLFW_EngineCore::runEngine(Game& game)
 {
 	// for this example just give the game direct access to the engine
@@ -84,6 +94,12 @@ bool GLFW_EngineCore::runEngine(Game& game)
 	return true;
 }
 
+//-----------------------------------------------------------//
+/*! RenderColouredBackground : This will be used to display a colourd background within the game.
+*Param One : The Red value.
+*Param Two : The Green value.
+*Param Three : The Blue value.
+*/
 void GLFW_EngineCore::renderColouredBackground(float r, float g, float b)
 {
 	glClearColor(r, g, b, 1.0f);
@@ -249,10 +265,14 @@ void GLFW_EngineCore::initCubeModel()
 	
 }
 
+//-----------------------------------------------------------//
+/*! SetCamera : This will be used to set the camera which will be used to display the scene.
+*Param One : The camera which will be used for the game engine.
+*/
 void GLFW_EngineCore::setCamera(const Camera* cam)
 {
 	// set the view and projection components of our shader to the camera values
-	glm::mat4 projection = glm::perspective(glm::radians(cam->m_fov), (float)m_screenWidth / (float)m_screenHeight, 0.1f, 100.0f);
+	glm::mat4 projection = glm::perspective(glm::radians(cam->getFOV()), (float)m_screenWidth / (float)m_screenHeight, 0.1f, 100.0f);
 	glUniformMatrix4fv(glGetUniformLocation(m_defaultShaderProgram, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
 	glUniformMatrix4fv(glGetUniformLocation(m_defaultShaderProgram, "view"), 1, GL_FALSE, glm::value_ptr(cam->getViewMatrix()));
@@ -265,6 +285,10 @@ void GLFW_EngineCore::setCamera(const Camera* cam)
 	
 }
 
+//-----------------------------------------------------------//
+/*! DrawCube : This will draw all of the objects in a given scene as a cube.
+*Param One : The model matrix of the object which should be drawn, (position, scale, ext.).
+*/
 void GLFW_EngineCore::drawCube(const glm::mat4& modelMatrix)
 {
 	// set the model component of our shader to the cube model
@@ -275,6 +299,11 @@ void GLFW_EngineCore::drawCube(const glm::mat4& modelMatrix)
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
+//-----------------------------------------------------------//
+/*! DrawModel : This will be used to draw the models into a scene.
+*Param One : The model which should be drawn.
+*Param Two : The model matrix for that model, (position, scale, ext.).
+*/
 void GLFW_EngineCore::drawModel(Model* model, glm::mat4& modelMatrix)
 {
 	// set the model component of our shader to the object model
