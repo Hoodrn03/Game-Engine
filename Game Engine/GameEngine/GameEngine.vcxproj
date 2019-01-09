@@ -144,6 +144,7 @@
     <ClCompile Include="src\stb_image.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\CameraComponent.h" />
     <ClInclude Include="include\Camera.h" />
     <ClInclude Include="include\ColourComponent.h" />
     <ClInclude Include="include\Component.h" />

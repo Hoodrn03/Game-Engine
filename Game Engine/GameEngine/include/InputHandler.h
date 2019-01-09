@@ -2,9 +2,12 @@
 
 #pragma once
 #include <map>
-#include "GameObject.h"
 #include <vector>
+
+#include "GameObject.h"
+
 #include "TransformComponent.h"
+#include "CameraComponent.h"
 
 /*! \class Handles all of the inputs within the game. */
 class InputCommand
@@ -25,6 +28,54 @@ public:
 	virtual void execute(GameObject& playerBackground) = 0;
 };
 
+class MoveForward : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		playerBackground.getComponent<CameraComponent>()->OnMessage("forward"); 
+	}
+};
+
+class MoveBackward : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		playerBackground.getComponent<CameraComponent>()->OnMessage("backward");
+	}
+};
+
+class MoveLeft : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		playerBackground.getComponent<CameraComponent>()->OnMessage("left");
+	}
+};
+
+class MoveRight : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		playerBackground.getComponent<CameraComponent>()->OnMessage("right");
+	}
+};
+
+class MoveUp : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		playerBackground.getComponent<CameraComponent>()->OnMessage("up");
+	}
+};
+
+class MoveDown : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		playerBackground.getComponent<CameraComponent>()->OnMessage("down");
+	}
+};
+
 /*! \struct This is the active event handler within the finished game. */
 struct InputHandler
 {	
@@ -43,7 +94,12 @@ struct InputHandler
 		// the idea will be to map the keys directly from a config file that can be loaded in
 		// and changed on the fly
 		
-		// m_controlMapping[65] = 
+		m_controlMapping[87] = new MoveForward; 
+		m_controlMapping[83] = new MoveBackward; 
+		m_controlMapping[65] = new MoveLeft;
+		m_controlMapping[68] = new MoveRight; 
+		m_controlMapping[32] = new MoveUp;
+		m_controlMapping[81] = new MoveDown; 
 
 	}
 

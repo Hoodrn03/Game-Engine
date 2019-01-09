@@ -41,6 +41,8 @@ private:
 	/*! \var This will be the current scene loaded into the game engine. */
 	Scene* m_CurrentScene; 
 
+	GameObject m_MainCamera; 
+
 public:
 
 	/*! \var A pointer to the current engine core. */

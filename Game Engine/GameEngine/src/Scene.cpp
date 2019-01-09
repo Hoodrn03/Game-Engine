@@ -39,7 +39,7 @@ void Scene::m_Render(IEngineCore * engineInterface)
 	{
 		for (unsigned int i = 0; i < v_GameObjects.size(); i++)
 		{
-			engineInterface->drawCube(*&v_GameObjects[i].getComponent<TransformComponent>()->getModelMatrix());
+			engineInterface->drawCube(v_GameObjects[i].getComponent<TransformComponent>()->getModelMatrix());
 		}
 	}
 }
