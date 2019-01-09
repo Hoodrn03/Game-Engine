@@ -1,17 +1,27 @@
+/*! \file This holds all of the definitions for the class Model. */
+
 #include "Model.h"
 #include <assimp/postprocess.h>
 #include "stb_image.h"
 #include <iostream>
 
+//-----------------------------------------------------------//
+/*! Constructor
+*Param One : The file path to find the model.
+*/
 Model::Model(string filepath)
 {
 	loadModel(filepath);
 }
 
-
+//-----------------------------------------------------------//
+/*! LoadModel : This will be used to load the model from a file.
+*Param One : The file path for that model.
+*/
 void Model::loadModel(string filepath)
 {
 	Assimp::Importer import;
+
 	const aiScene *scene = import.ReadFile(filepath, aiProcess_Triangulate | aiProcess_FlipUVs);
 
 	if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
@@ -19,14 +29,16 @@ void Model::loadModel(string filepath)
 		cout << "ERROR::ASSIMP::" << import.GetErrorString() << endl;
 		return;
 	}
+	
 	directory = filepath.substr(0, filepath.find_last_of('/'));
 
 	processNode(scene->mRootNode, scene);
 }
 
-
-
-
+//-----------------------------------------------------------//
+/*! ProcessNode : This will process a node.
+*
+*/
 void Model::processNode(aiNode* node, const aiScene* scene)
 {
 	// get the meshes of the node and add them to our vector
@@ -43,6 +55,10 @@ void Model::processNode(aiNode* node, const aiScene* scene)
 	}
 }
 
+//-----------------------------------------------------------//
+/*!	ProcessMesh : This will process a mesh.
+*
+*/
 Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
 {
 	// data to fill
@@ -101,7 +117,11 @@ Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
 	return Mesh(vertices, indices, textures);
 }
 
-void Model::render(const unsigned shaderProgram)
+//-----------------------------------------------------------//
+/*! Render : This will be usesd to render the model in the scene.
+*Param One : THe current shader program used by the game engine.
+*/
+void Model::render(const unsigned int shaderProgram)
 {
 	for (auto mesh : v_meshes)
 	{
@@ -109,14 +129,22 @@ void Model::render(const unsigned shaderProgram)
 	}
 }
 
+//-----------------------------------------------------------//
+/*! LoadMaterialTexture : This will load all of the tectures used by the model.
+*
+*/
 vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName)
 {
 	vector<Texture> textures;
+
 	for (unsigned int i = 0; i < mat->GetTextureCount(type); i++)
 	{
 		aiString str;
+
 		mat->GetTexture(type, i, &str);
+
 		bool b_loadedTexture = false;
+
 		for (auto texture : v_textures)
 		{
 			if (std::strcmp(texture.filepath.C_Str(), str.C_Str()) == 0)
@@ -141,7 +169,12 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType type,
 }
 
 
-// static function to load a texture using lightweight stb_image library
+//-----------------------------------------------------------//
+/*! TextureFromFile : This will be used to load a model's texture from a file.
+*Param One : The name of the file.
+*Param Two : The location where to find the file.
+*Param Three : The gamma in the texture.
+*/
 unsigned int Model::TextureFromFile(const char* filepath, const string& directory, bool gamma)
 {
 	string filename = string(filepath);

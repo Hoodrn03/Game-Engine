@@ -1,17 +1,36 @@
+/*! \file This will hold all of the definitions for the class Scene. */
+
 #include "Scene.h"
 
-Scene::Scene()
+//-----------------------------------------------------------//
+/*! Constructor
+*
+*/
+Scene::Scene(std::string levelFile)
 {
+	m_LoadLevelJson(levelFile); 
 }
 
+//-----------------------------------------------------------//
+/*! Deconstructor
+*
+*/
 Scene::~Scene()
 {
 }
 
+//-----------------------------------------------------------//
+/*! Update : Used to update the current scene.
+*
+*/
 void Scene::m_Update()
 {
 }
 
+//-----------------------------------------------------------//
+/*! Render : Used to render the current scene.
+*Param One : The current engine core being used.
+*/
 void Scene::m_Render(IEngineCore * engineInterface)
 {
 	// draw the cube
@@ -20,21 +39,29 @@ void Scene::m_Render(IEngineCore * engineInterface)
 	{
 		for (unsigned int i = 0; i < v_GameObjects.size(); i++)
 		{
-			engineInterface->drawModel(v_GameObjects[i].getComponent<ModelComponent>()->m_ThisModel, *&v_GameObjects[i].getComponent<TransformComponent>()->getModelMatrix());
+			engineInterface->drawCube(*&v_GameObjects[i].getComponent<TransformComponent>()->getModelMatrix());
 		}
 	}
 }
 
+//-----------------------------------------------------------//
+/*! GetGameObjects : Used to get the list of game object currently in the scene.
+*
+*/
 std::vector<GameObject> Scene::m_GetGameObjects()
 {
 	return v_GameObjects;
 }
 
+//-----------------------------------------------------------//
+/*! LoadLevelJson : This will load the game scene from a json file.
+*
+*/
 bool Scene::m_LoadLevelJson(std::string levelFile)
 {
 	v_GameObjects.clear(); 
 
-	Model * l_TestModel = new Model("assets/models/Sphere.obj");
+	// Model * l_TestModel = new Model("assets/models/Sphere.obj");
 
 	// Initalize variables. 
 	std::fstream l_JasonData;
@@ -73,7 +100,7 @@ bool Scene::m_LoadLevelJson(std::string levelFile)
 
 		v_GameObjects[i].addComponent(new TransformComponent(pos));
 
-		v_GameObjects[i].addComponent(new ModelComponent(l_TestModel));
+		// v_GameObjects[i].addComponent(new ModelComponent(l_TestModel));
 		
 	}
 

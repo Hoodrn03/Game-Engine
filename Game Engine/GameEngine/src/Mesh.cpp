@@ -1,8 +1,16 @@
+/*! \file This holds all of the definitions for the class Mesh. */
+
 #pragma once
 #include "Mesh.h"
 
 using namespace std;
 
+//-----------------------------------------------------------//
+/*! Constructor
+*Param One : A list of verices used by the model.
+*Param Two : A list of indices used by the model.
+*Param Three : The list of textures for the model.
+*/
 Mesh::Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures)
 {
 	this->vertices = vertices;
@@ -13,7 +21,10 @@ Mesh::Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture
 	setupMesh();
 }
 
-// render the mesh with a given shader program
+//-----------------------------------------------------------//
+/*! Render : Render the mesh with a given shader program
+*Param One : The current shader program being used.
+*/
 void Mesh::render(const unsigned int shaderProgram)
 {
 	// bind the appropriate textures
@@ -58,7 +69,10 @@ void Mesh::render(const unsigned int shaderProgram)
 
 }
 
-// initialises all the buffer arrays
+//-----------------------------------------------------------//
+/*! SetUpMesh : Initialises all the buffer arrays
+*
+*/
 void Mesh::setupMesh()
 {
 	// create buffers/arrays

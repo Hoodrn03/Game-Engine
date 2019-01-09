@@ -18,9 +18,7 @@ Game::Game()
 	m_playerBackground.addComponent(new GreenComponent);
 	m_playerBackground.addComponent(new BlueComponent); 
 
-	m_CurrentScene = new Scene();
-
-	m_CurrentScene->m_LoadLevelJson("assets/levels/testScene.json"); 
+	m_CurrentScene = new Scene("assets/levels/myCubeLevel.json");
 
 	m_inputHandler = new InputHandler(&m_CurrentScene->m_GetGameObjects()[0]);
 }
