@@ -1,10 +1,14 @@
 /*! \file This will hold the class definitions for the class Game.h */
 
-#include "Game.h"
-#include "TransformComponent.h"
-#include "ColourComponent.h"
 #include <fstream>
 #include <sstream>
+
+#include "Game.h"
+
+#include "TransformComponent.h"
+#include "ColourComponent.h"
+#include "CameraComponent.h"
+#include "MoveComponent.h"
 
 //-----------------------------------------------------------//
 /*! Constructor
@@ -15,13 +19,17 @@ Game::Game()
 	m_engineInterfacePtr = nullptr;
 
 	m_MainCamera.addComponent(new TransformComponent);
-	m_MainCamera.addComponent(new CameraComponent(&m_camera));
+	m_MainCamera.addComponent(new CameraComponent(&m_camera, &m_MainCamera));
+	m_MainCamera.addComponent(new MoveComponent(&m_MainCamera)); 
+
+	m_PlayerObject.addComponent(new TransformComponent); 
+	m_PlayerObject.addComponent(new ModelComponent(new Model("assets / models / Cube.obj"))); 
 
 	m_playerBackground.addComponent(new RedComponent);
 	m_playerBackground.addComponent(new GreenComponent);
 	m_playerBackground.addComponent(new BlueComponent); 
 
-	m_CurrentScene = new Scene("assets/levels/testScene.json");
+	m_CurrentScene = new Scene("assets/levels/levelOne.json");
 
 	m_inputHandler = new InputHandler(&m_MainCamera);
 }
@@ -40,7 +48,7 @@ Game::~Game()
 */
 void Game::m_Update()
 {
-
+	m_MainCamera.getComponent<CameraComponent>()->OnUpdate(0.f); 
 }
 
 //-----------------------------------------------------------//

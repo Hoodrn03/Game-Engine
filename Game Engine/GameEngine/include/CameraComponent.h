@@ -3,16 +3,17 @@
 #pragma once
 
 #include "Component.h"
-#include "Camera.h"
 
-#define TRANSLATE_VALUE 0.01f
+#include "GameObject.h"
+#include "Camera.h"
 
 class CameraComponent : public Component
 {
 
 public: 
 
-	CameraComponent(Camera* connectedCamera) : m_ThisCamera(connectedCamera) {};
+	CameraComponent(Camera* connectCamera, GameObject* connectObject) : 
+		m_ThisCamera(connectCamera), m_ThisObject(connectObject) {};
 
 	~CameraComponent() {};
 
@@ -20,7 +21,9 @@ public:
 
 private: 
 
-	Camera *m_ThisCamera; 
+	GameObject * m_ThisObject; 
+	
+	Camera * m_ThisCamera; 
 
 public:
 
@@ -34,7 +37,10 @@ public:
 	*/
 	void OnUpdate(float dt) override
 	{
-
+		if (m_ThisObject->getComponent<TransformComponent>()->position() != m_ThisCamera->position())
+		{
+			m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position();
+		}
 	}
 
 	//-----------------------------------------------------------//
@@ -43,34 +49,7 @@ public:
 	*/
 	void OnMessage(const std::string m) override
 	{
-		if (m == "forward")
-		{
-			m_ThisCamera->translate(0, 0, TRANSLATE_VALUE);
-		}
-		else if (m == "backward")
-		{
-			m_ThisCamera->translate(0, 0, -TRANSLATE_VALUE);
-		}
-		else if (m == "right")
-		{
-			m_ThisCamera->translate(-TRANSLATE_VALUE, 0, 0);
-		}
-		else if (m == "left")
-		{
-			m_ThisCamera->translate(TRANSLATE_VALUE, 0, 0);
-		}
-		else if (m == "up")
-		{
-			m_ThisCamera->translate(0, -TRANSLATE_VALUE, 0);
-		}
-		else if (m == "down")
-		{
-			m_ThisCamera->translate(0, TRANSLATE_VALUE, 0);
-		}
-		else
-		{
-			std::cout << "Not a command." << std::endl; 
-		}
+
 	}
 
 };

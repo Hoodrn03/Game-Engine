@@ -2,16 +2,19 @@
 
 #pragma once
 
-#include "IEngineCore.h"
-#include "GameObject.h"
-#include "TransformComponent.h"
-#include "ModelComponent.h"
-#include "Model.h"
-
 #include <json/json.h>
 
 #include <fstream>
 #include <sstream>
+
+
+#include "IEngineCore.h"
+#include "GameObject.h"
+#include "Model.h"
+
+#include "TransformComponent.h"
+#include "ModelComponent.h"
+#include "MoveComponent.h"
 
 /*! \class The current scene loaded into the game engine. */
 class Scene

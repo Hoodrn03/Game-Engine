@@ -39,7 +39,7 @@ void Scene::m_Render(IEngineCore * engineInterface)
 	{
 		for (unsigned int i = 0; i < v_GameObjects.size(); i++)
 		{
-			engineInterface->drawCube(v_GameObjects[i].getComponent<TransformComponent>()->getModelMatrix());
+			engineInterface->drawModel(*&v_GameObjects[i].getComponent<ModelComponent>()->m_ThisModel, *&v_GameObjects[i].getComponent<TransformComponent>()->getModelMatrix());
 		}
 	}
 }
@@ -59,9 +59,10 @@ std::vector<GameObject> Scene::m_GetGameObjects()
 */
 bool Scene::m_LoadLevelJson(std::string levelFile)
 {
-	v_GameObjects.clear(); 
 
-	// Model * l_TestModel = new Model("assets/models/Sphere.obj");
+	v_GameObjects.clear();
+
+	Model * l_TestModel = new Model("assets/models/Cube.obj");
 
 	// Initalize variables. 
 	std::fstream l_JasonData;
@@ -100,7 +101,7 @@ bool Scene::m_LoadLevelJson(std::string levelFile)
 
 		v_GameObjects[i].addComponent(new TransformComponent(pos));
 
-		// v_GameObjects[i].addComponent(new ModelComponent(l_TestModel));
+		v_GameObjects[i].addComponent(new ModelComponent(l_TestModel));
 		
 	}
 

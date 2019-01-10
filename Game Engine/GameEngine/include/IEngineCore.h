@@ -3,9 +3,11 @@
 */
 
 #pragma once
+
 #include <string>
 #include <iostream>
 #include <glm/mat4x4.hpp>
+
 #include "Model.h"
 
 class Camera;

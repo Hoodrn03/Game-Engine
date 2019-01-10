@@ -43,6 +43,8 @@ private:
 
 	GameObject m_MainCamera; 
 
+	GameObject m_PlayerObject; 
+
 public:
 
 	/*! \var A pointer to the current engine core. */

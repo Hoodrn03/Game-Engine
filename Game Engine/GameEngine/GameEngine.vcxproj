@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GLAD\glad.c" />
     <ClCompile Include="src\GLFW_EngineCore.cpp" />
@@ -160,6 +161,8 @@
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="include\TransformComponent.h" />
+    <ClInclude Include="include\MoveComponent.h" />
+    <ClInclude Include="include\Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

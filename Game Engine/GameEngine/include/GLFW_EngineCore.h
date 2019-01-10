@@ -5,10 +5,12 @@
 #pragma once
 
 #include "IEngineCore.h"
+
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
 #include <vector>
 #include <glm/mat4x4.hpp>
+
 #include "Camera.h"
 #include "Model.h"
 
@@ -88,8 +90,7 @@ private:
 	/*! \var The current game window. */
 	GLFWwindow* m_window;
 
-	/*! \var This will be the main shader program which will be used within the engine.*/
-	GLuint m_defaultShaderProgram;
+z
 	
 	/*! \var The width of the game window. */
 	static int m_screenWidth;

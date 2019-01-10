@@ -4,13 +4,22 @@
 
 #pragma once
 
-#include "Component.h"
 #include <unordered_map>
 #include <typeindex>
+
+#include "Component.h"
 
 /*! \class This component will allow for other components to be added to the object. */
 class GameObject
 {
+
+	// Data Members
+
+public: 
+
+	std::string m_id = "Null";
+
+	// Member Functions 
 public:
 
 	/*! \template This will be used to get another componet which may be attatched to the 

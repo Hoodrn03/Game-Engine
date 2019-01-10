@@ -7,7 +7,7 @@
 #include "GameObject.h"
 
 #include "TransformComponent.h"
-#include "CameraComponent.h"
+#include "MoveComponent.h"
 
 /*! \class Handles all of the inputs within the game. */
 class InputCommand
@@ -32,7 +32,17 @@ class MoveForward : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
 	{
-		playerBackground.getComponent<CameraComponent>()->OnMessage("forward"); 
+		try
+		{
+			if (playerBackground.getComponent<MoveComponent>() == nullptr)
+			{
+				playerBackground.getComponent<MoveComponent>()->OnMessage("forward");
+			}
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << e.what();
+		}
 	}
 };
 
@@ -40,7 +50,17 @@ class MoveBackward : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
 	{
-		playerBackground.getComponent<CameraComponent>()->OnMessage("backward");
+		try
+		{
+			if (playerBackground.getComponent<MoveComponent>() != nullptr)
+			{
+				playerBackground.getComponent<MoveComponent>()->OnMessage("backward");
+			}
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << e.what();
+		}
 	}
 };
 
@@ -48,7 +68,17 @@ class MoveLeft : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
 	{
-		playerBackground.getComponent<CameraComponent>()->OnMessage("left");
+		try
+		{
+			if (playerBackground.getComponent<MoveComponent>() != nullptr)
+			{
+				playerBackground.getComponent<MoveComponent>()->OnMessage("left");
+			}
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << e.what();
+		}
 	}
 };
 
@@ -56,25 +86,21 @@ class MoveRight : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
 	{
-		playerBackground.getComponent<CameraComponent>()->OnMessage("right");
+		try
+		{
+			if (playerBackground.getComponent<MoveComponent>() != nullptr)
+			{
+				playerBackground.getComponent<MoveComponent>()->OnMessage("right");
+			}
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << e.what(); 
+		}
 	}
 };
 
-class MoveUp : public InputCommand
-{
-	void execute(GameObject& playerBackground) override
-	{
-		playerBackground.getComponent<CameraComponent>()->OnMessage("up");
-	}
-};
 
-class MoveDown : public InputCommand
-{
-	void execute(GameObject& playerBackground) override
-	{
-		playerBackground.getComponent<CameraComponent>()->OnMessage("down");
-	}
-};
 
 /*! \struct This is the active event handler within the finished game. */
 struct InputHandler
@@ -98,9 +124,6 @@ struct InputHandler
 		m_controlMapping[83] = new MoveBackward; 
 		m_controlMapping[65] = new MoveLeft;
 		m_controlMapping[68] = new MoveRight; 
-		m_controlMapping[32] = new MoveUp;
-		m_controlMapping[81] = new MoveDown; 
-
 	}
 
 	//-----------------------------------------------------------//

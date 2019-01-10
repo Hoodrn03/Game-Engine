@@ -10,7 +10,7 @@
 /*! class The camera will be used to display all of the items in the scene. */
 class Camera
 {
-private:
+public:
 
 	// Data Members
 

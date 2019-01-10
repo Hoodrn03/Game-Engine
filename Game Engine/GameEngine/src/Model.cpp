@@ -119,7 +119,7 @@ Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
 
 //-----------------------------------------------------------//
 /*! Render : This will be usesd to render the model in the scene.
-*Param One : THe current shader program used by the game engine.
+*Param One : The current shader program used by the game engine.
 */
 void Model::render(const unsigned int shaderProgram)
 {
