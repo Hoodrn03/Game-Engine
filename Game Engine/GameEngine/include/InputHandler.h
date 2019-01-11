@@ -1,4 +1,5 @@
 /*! \file This will be used to handle all of the inputs for the game engine. */
+// By Ryan Hood. 
 
 #pragma once
 #include <map>
@@ -34,7 +35,7 @@ class MoveForward : public InputCommand
 	{
 		try
 		{
-			if (playerBackground.getComponent<MoveComponent>() == nullptr)
+			if (playerBackground.getComponent<MoveComponent>() != nullptr)
 			{
 				playerBackground.getComponent<MoveComponent>()->OnMessage("forward");
 			}

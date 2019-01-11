@@ -1,3 +1,6 @@
+/*! \file This will hold the class definitions for the class GLFW_EngineCore.h */
+// By Ryan Hood. 
+
 #include "GLFW_EngineCore.h"
 #include "Game.h"
 #include <fstream>

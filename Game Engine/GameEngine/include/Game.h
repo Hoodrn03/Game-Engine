@@ -1,6 +1,7 @@
 /*! \file This will hold the main game loop; meanining it will control all of 
 *			rendering and updating of game logic for the engine.
 */
+// By Ryan Hood. 
 
 #pragma once
 
@@ -9,6 +10,7 @@
 #include "GameObject.h"
 #include "Camera.h"
 #include "Scene.h"
+#include "Renderer.h"
 
 /*! \class The main game loop, this holds both the update and render functions. */
 class Game
@@ -40,6 +42,8 @@ private:
 
 	/*! \var This will be the current scene loaded into the game engine. */
 	Scene* m_CurrentScene; 
+
+	Renderer m_GameRenderer; 
 
 	GameObject m_MainCamera; 
 

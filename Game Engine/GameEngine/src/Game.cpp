@@ -1,4 +1,5 @@
 /*! \file This will hold the class definitions for the class Game.h */
+// By Ryan Hood. 
 
 #include <fstream>
 #include <sstream>
@@ -9,6 +10,7 @@
 #include "ColourComponent.h"
 #include "CameraComponent.h"
 #include "MoveComponent.h"
+
 
 //-----------------------------------------------------------//
 /*! Constructor
@@ -21,9 +23,11 @@ Game::Game()
 	m_MainCamera.addComponent(new TransformComponent);
 	m_MainCamera.addComponent(new CameraComponent(&m_camera, &m_MainCamera));
 	m_MainCamera.addComponent(new MoveComponent(&m_MainCamera)); 
+	m_MainCamera.m_id = "Camera"; 
 
 	m_PlayerObject.addComponent(new TransformComponent); 
-	m_PlayerObject.addComponent(new ModelComponent(new Model("assets / models / Cube.obj"))); 
+	m_PlayerObject.addComponent(new ModelComponent(new Model("assets/models/Cube.obj"))); 
+	m_PlayerObject.m_id = "Player"; 
 
 	m_playerBackground.addComponent(new RedComponent);
 	m_playerBackground.addComponent(new GreenComponent);
@@ -79,6 +83,7 @@ void Game::m_Render()
 	m_engineInterfacePtr->setCamera(&m_camera);
 
 	// Render the current scene. 
-	m_CurrentScene->m_Render(m_engineInterfacePtr);
-	
+	m_GameRenderer.m_Render(*&m_CurrentScene->m_GetGameObjects(), m_engineInterfacePtr); 
+
+	m_GameRenderer.m_Render(&m_PlayerObject, m_engineInterfacePtr);
 }

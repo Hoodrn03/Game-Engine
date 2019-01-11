@@ -1,6 +1,7 @@
 /*! \file This will be the engine core which will be used on windows operating 
 *			systems. 
 */
+// By Ryan Hood. 
 
 #pragma once
 
@@ -89,9 +90,9 @@ private:
 
 	/*! \var The current game window. */
 	GLFWwindow* m_window;
-
-z
 	
+	GLuint m_defaultShaderProgram; 
+
 	/*! \var The width of the game window. */
 	static int m_screenWidth;
 
