@@ -29,6 +29,42 @@ public:
 	virtual void execute(GameObject& playerBackground) = 0;
 };
 
+class RotLeft : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		try
+		{
+			if (playerBackground.getComponent<MoveComponent>() != nullptr)
+			{
+				playerBackground.getComponent<MoveComponent>()->OnMessage("rotLeft");
+			}
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << e.what();
+		}
+	}
+};
+
+class RotRight : public InputCommand
+{
+	void execute(GameObject& playerBackground) override
+	{
+		try
+		{
+			if (playerBackground.getComponent<MoveComponent>() != nullptr)
+			{
+				playerBackground.getComponent<MoveComponent>()->OnMessage("rotRight");
+			}
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << e.what();
+		}
+	}
+};
+
 class MoveForward : public InputCommand
 {
 	void execute(GameObject& playerBackground) override

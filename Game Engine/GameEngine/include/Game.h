@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include <GLAD/glad.h>
+#include <GLFW/glfw3.h>
+
 #include "IEngineCore.h"
 #include "InputHandler.h"
 #include "GameObject.h"
@@ -37,9 +40,6 @@ private:
 	/*! \var The background for the game. */
 	GameObject m_playerBackground;
 
-	/*! \var This will be the main game camera for the game. */
-	Camera m_camera;
-
 	/*! \var This will be the current scene loaded into the game engine. */
 	Scene* m_CurrentScene; 
 
@@ -59,6 +59,10 @@ public:
 	*/
 	InputHandler* m_inputHandler;
 
+	float m_dt = 0; 
+
+	double m_CurrentTime, m_LastTime; 
+
 	// Member Functons 
 
 public:
@@ -68,6 +72,8 @@ public:
 	*
 	*/
 	void m_Update();
+
+	void m_UpdateRotation(float xAngle, float yAngle);
 
 	//-----------------------------------------------------------//
 	/*! Render : Will draw all items at the end of the frame. 

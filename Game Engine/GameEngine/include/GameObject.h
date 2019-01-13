@@ -22,6 +22,15 @@ public:
 	// Member Functions 
 public:
 
+	void m_Update(float dt)
+	{
+		std::for_each(m_components.begin(), m_components.end(), [](std::pair<std::type_index, Component*> element) 
+		{	
+			element.second->OnUpdate(0.f); 
+		}
+		);
+	}
+
 	/*! \template This will be used to get another componet which may be attatched to the 
 	*				game object; where type T is the component to find.  
 	*/

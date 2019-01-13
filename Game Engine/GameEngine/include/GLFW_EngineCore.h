@@ -99,6 +99,8 @@ private:
 	/*! \var The height of the game window. */
 	static int m_screenHeight;
 
+	static float m_HorizontalAngle, m_VerticalAngle;
+
 	/*! \var A list of inputs the game can recives in a single frame. */
 	static std::vector<bool> m_keyBuffer;
 

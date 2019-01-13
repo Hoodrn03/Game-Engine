@@ -62,8 +62,6 @@ bool Scene::m_LoadLevelJson(std::string levelFile)
 
 	v_GameObjects.clear();
 
-	Model * l_TestModel = new Model("assets/models/Cube.obj");
-
 	// Initalize variables. 
 	std::fstream l_JasonData;
 	
@@ -101,7 +99,9 @@ bool Scene::m_LoadLevelJson(std::string levelFile)
 
 		v_GameObjects[i].addComponent(new TransformComponent(pos));
 
-		v_GameObjects[i].addComponent(new ModelComponent(l_TestModel));
+		v_GameObjects[i].addComponent(new ModelComponent(new Model("assets/models/Cube.obj")));
+
+		v_GameObjects[i].m_id = "LevelObject"; 
 		
 	}
 

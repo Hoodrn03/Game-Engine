@@ -158,9 +158,12 @@ protected:
 	/*! \var The game world position for the game object. */
 	glm::vec3 m_position;
 
+	/*! \var The current scale factor the game object currently has. */
+	glm::vec3 m_scale;
+
+public:
+
 	/*! \var The direction the game object is currently facing. */
 	glm::quat m_orientation;
 
-	/*! \var The current scale factor the game object currently has. */
-	glm::vec3 m_scale;
 };

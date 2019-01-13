@@ -13,6 +13,9 @@ std::vector<bool> GLFW_EngineCore::m_keyBuffer;
 int GLFW_EngineCore::m_screenWidth;
 int GLFW_EngineCore::m_screenHeight;
 
+float GLFW_EngineCore::m_HorizontalAngle;
+float GLFW_EngineCore::m_VerticalAngle;
+
 GLFW_EngineCore::~GLFW_EngineCore()
 {
 	// cleanup
@@ -54,6 +57,7 @@ bool GLFW_EngineCore::initWindow(int width, int height, std::string windowName)
 	// callback functions
 	glfwSetFramebufferSizeCallback(m_window, windowResizeCallbackEvent);
 	glfwSetKeyCallback(m_window, keyCallbackEvent);
+	glfwSetCursorPosCallback(m_window, mouseMoveCallbackEvent);
 
 	// make space for the keybuffer
 	m_keyBuffer.resize(m_keyBufferSize);
@@ -86,7 +90,9 @@ bool GLFW_EngineCore::runEngine(Game& game)
 	while (!glfwWindowShouldClose(m_window))
 	{
 		game.m_inputHandler->handleInputs(m_keyBuffer);
+		
 		game.m_Update(); // update game logic
+		game.m_UpdateRotation(m_HorizontalAngle, m_VerticalAngle); 
 		game.m_Render(); // prepare game to send info to the renderer in engine core
 
 		// swap buffers
@@ -107,6 +113,19 @@ void GLFW_EngineCore::renderColouredBackground(float r, float g, float b)
 {
 	glClearColor(r, g, b, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void GLFW_EngineCore::mouseMoveCallbackEvent(GLFWwindow * window, double xPos, double yPos)
+{
+	glfwGetCursorPos(window, &xPos, &yPos); 
+
+	glfwSetCursorPos(window, m_screenWidth / 2, m_screenHeight / 2);
+
+	float l_MoveSpeed = 0.005f; 
+
+	m_HorizontalAngle += l_MoveSpeed * float(m_screenWidth / 2 - xPos);
+	m_VerticalAngle += l_MoveSpeed * float(m_screenHeight / 2 - yPos);
+
 }
 
 //-----------------------------Private functions------------------------------

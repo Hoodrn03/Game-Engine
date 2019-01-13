@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <iostream>
@@ -59,6 +60,7 @@ public:
 		{
 			m_ThisObject->getComponent<TransformComponent>()->translate(TRANSLATE_VALUE, 0, 0);
 		}
+
 	}
 
 
