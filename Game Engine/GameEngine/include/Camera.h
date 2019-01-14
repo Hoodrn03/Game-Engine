@@ -70,7 +70,9 @@ public:
 	/*! GetViewMatrix : This will be used to transform vertices from world space to
 	*						view space.
 	*/
-	glm::mat4 getViewMatrix() const { return m_ViewMatrix; }
+	// glm::mat4 getViewMatrix() const { return m_ViewMatrix; }
+
+	glm::mat4 getViewMatrix() const { return glm::translate(glm::mat4_cast(m_orientation), m_position); }
 	
 	//-----------------------------------------------------------//
 	/*! Translate : This will move the camera in the game space. 

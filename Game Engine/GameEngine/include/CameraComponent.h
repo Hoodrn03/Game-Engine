@@ -9,6 +9,8 @@
 
 #define MouseSpeed 0.0005f
 
+#define ROTATION_VALUE 0.005f
+
 enum cameraType
 {
 	staticCamera = 0x300,
@@ -28,9 +30,37 @@ public:
 	CameraComponent(Camera* connectCamera, GameObject* connectObject, glm::vec3 offset) :
 		m_ThisCamera(connectCamera), m_ThisObject(connectObject), m_CameraOffset(offset) {};
 
+	CameraComponent(Camera* connectCamera, GameObject* connectObject, cameraType selection) :
+		m_ThisCamera(connectCamera), m_ThisObject(connectObject), m_CameraType(selection) 
+	{
+		switch (m_CameraType)
+		{
+		case staticCamera:
+			break;
+
+		case firstPersonCamera:
+			m_CameraOffset = glm::vec3(0, 1, 0);
+			break;
+
+		case thirdPersonCamera:
+			m_CameraOffset = glm::vec3(0, 2, -2);
+			break;
+
+		default:
+			break;
+		}
+	};
+
+	CameraComponent(Camera* connectCamera, GameObject* connectObject, glm::vec3 offset, cameraType selection) :
+		m_ThisCamera(connectCamera), m_ThisObject(connectObject), m_CameraOffset(offset), m_CameraType(selection) {};
+
 	~CameraComponent() {};
 
 	// Data Members 
+
+public:
+
+	cameraType m_CameraType;
 
 private: 
 
@@ -38,9 +68,7 @@ private:
 	
 	Camera * m_ThisCamera; 
 
-	cameraType m_CameraType; 
-
-	glm::vec3 m_CameraOffset; 
+	glm::vec3 m_CameraOffset = glm::vec3(0, 0, 0); 
 
 	glm::vec3 m_direction; 
 
@@ -60,9 +88,44 @@ public:
 	{
 		if (m_ThisCamera->position() != m_ThisObject->getComponent<TransformComponent>()->position())
 		{
-			m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset;
+			switch (m_CameraType)
+			{
+			case staticCamera:
+				break;
 
-			// std::cout << "CameraMove"; 
+			case firstPersonCamera:
+				
+				m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset;
+				
+				if (m_ThisCamera->orientation().y != m_ThisObject->getComponent<TransformComponent>()->orientation().y)
+				{
+					m_ThisCamera->m_orientation.y = m_ThisObject->getComponent<TransformComponent>()->orientation().y;
+					m_ThisCamera->m_orientation.z = m_ThisObject->getComponent<TransformComponent>()->orientation().z;
+					m_ThisCamera->m_orientation.w = m_ThisObject->getComponent<TransformComponent>()->orientation().w;
+				}
+
+				break;
+
+			case thirdPersonCamera:
+
+				m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset;
+				m_ThisCamera->lookAt(m_ThisObject->getComponent<TransformComponent>()->position());
+				
+				break;
+			
+			default:
+				
+				m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset;
+
+				if (m_ThisCamera->orientation().y != m_ThisObject->getComponent<TransformComponent>()->orientation().y)
+				{
+					m_ThisCamera->m_orientation.y = m_ThisObject->getComponent<TransformComponent>()->orientation().y;
+					m_ThisCamera->m_orientation.z = m_ThisObject->getComponent<TransformComponent>()->orientation().z;
+					m_ThisCamera->m_orientation.w = m_ThisObject->getComponent<TransformComponent>()->orientation().w;
+				}
+
+				break;
+			}
 		}
 	}
 
@@ -72,30 +135,14 @@ public:
 	*/
 	void OnMessage(const std::string m) override
 	{
-	}
-
-	void m_RotateCamera(float xAngle, float yAngle)
-	{
-		m_direction = glm::vec3(
-			cos(yAngle) * sin(xAngle),
-			sin(yAngle),
-			cos(yAngle) * cos(xAngle)
-		);
-
-		// Right vector
-		glm::vec3 l_right = glm::vec3(
-			sin(xAngle - 3.14f / 2.0f),
-			0,
-			cos(xAngle - 3.14f / 2.0f)
-		);
-
-		// Up vector : perpendicular to both direction and right
-		glm::vec3 l_up = glm::cross(l_right, m_direction);
-
-		glm::mat4 viewMatrix = glm::lookAt(m_ThisCamera->position(), m_ThisCamera->position() + m_direction, l_up); 
-
-		m_ThisCamera->m_ViewMatrix = viewMatrix; 
-
+		if (m == "rotUp")
+		{
+			m_ThisCamera->pitch(-ROTATION_VALUE);
+		}
+		else if (m == "rotDown")
+		{
+			m_ThisCamera->pitch(ROTATION_VALUE);
+		}
 	}
 };
 

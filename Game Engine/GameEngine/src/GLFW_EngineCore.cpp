@@ -123,8 +123,8 @@ void GLFW_EngineCore::mouseMoveCallbackEvent(GLFWwindow * window, double xPos, d
 
 	float l_MoveSpeed = 0.005f; 
 
-	m_HorizontalAngle += l_MoveSpeed * float(m_screenWidth / 2 - xPos);
-	m_VerticalAngle += l_MoveSpeed * float(m_screenHeight / 2 - yPos);
+	m_HorizontalAngle = l_MoveSpeed * float(m_screenWidth / 2 - xPos);
+	m_VerticalAngle = l_MoveSpeed * float(m_screenHeight / 2 - yPos);
 
 }
 

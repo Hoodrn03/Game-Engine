@@ -9,6 +9,7 @@
 #include "TransformComponent.h"
 
 #define TRANSLATE_VALUE 0.01f
+#define ROTATION_VALUE 0.005f
 
 class MoveComponent : public Component
 {
@@ -60,8 +61,17 @@ public:
 		{
 			m_ThisObject->getComponent<TransformComponent>()->translate(TRANSLATE_VALUE, 0, 0);
 		}
-
+		else if (m == "rotLeft")
+		{
+			m_ThisObject->getComponent<TransformComponent>()->yaw(-ROTATION_VALUE); 
+		}
+		else if (m == "rotRight")
+		{
+			m_ThisObject->getComponent<TransformComponent>()->yaw(ROTATION_VALUE);
+		}
 	}
+
+
 
 
 };
