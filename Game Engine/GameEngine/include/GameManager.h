@@ -52,6 +52,22 @@ public:
 
 	GameObject* m_GetGameObject(int identifier) { return v_GameObjects[identifier]; }
 
+	GameObject* m_GetGameObject(std::string identifier)
+	{
+		if (v_GameObjects.size() > 0)
+		{
+			for (unsigned int i = 0; i < v_GameObjects.size(); i++)
+			{
+				if (v_GameObjects[i]->m_id == identifier)
+				{
+					return v_GameObjects[i];
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
 	GameObject * m_GetPlayerObject() 
 	{
 		if (v_GameObjects.size() > 0)

@@ -37,7 +37,7 @@ public:
 			break;
 
 		case firstPersonCamera:
-			m_CameraOffset = glm::vec3(0, -1, 0);
+			m_CameraOffset = glm::vec3(0, -0.75, 0);
 			break;
 
 		case thirdPersonCamera:
@@ -86,7 +86,7 @@ public:
 		{
 			m_ThisCamera->m_position = (-m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset);
 
-			m_ThisCamera->m_orientation = -(m_ThisObject->getComponent<TransformComponent>()->orientation());
+			m_ThisCamera->m_orientation = glm::quat(-m_ThisObject->getComponent<TransformComponent>()->orientation());
 		}
 
 		else if (m_CameraType == thirdPersonCamera)
