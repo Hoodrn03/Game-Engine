@@ -145,6 +145,8 @@ struct InputHandler
 	/*! \var A pointer to a player object. */
 	GameObject* m_playerCube;
 
+	GameObject* m_UniversalCommands; 
+
 	/*! \var This will hold all of the key commands and the action the key will cause. */
 	std::map<int, InputCommand*> m_controlMapping;
 
@@ -161,6 +163,18 @@ struct InputHandler
 		m_controlMapping[83] = new MoveBackward; 
 		m_controlMapping[65] = new MoveLeft;
 		m_controlMapping[68] = new MoveRight; 
+	}
+
+	InputHandler(GameObject* playerCube, GameObject* utilityObject) : 
+		m_playerCube(playerCube), m_UniversalCommands(utilityObject)
+	{
+		// the idea will be to map the keys directly from a config file that can be loaded in
+		// and changed on the fly
+
+		m_controlMapping[87] = new MoveForward;
+		m_controlMapping[83] = new MoveBackward;
+		m_controlMapping[65] = new MoveLeft;
+		m_controlMapping[68] = new MoveRight;
 	}
 
 	//-----------------------------------------------------------//

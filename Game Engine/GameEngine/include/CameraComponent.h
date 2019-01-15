@@ -7,8 +7,6 @@
 #include "GameObject.h"
 #include "Camera.h"
 
-#define MouseSpeed 0.0005f
-
 #define ROTATION_VALUE 0.005f
 
 enum cameraType
@@ -39,11 +37,11 @@ public:
 			break;
 
 		case firstPersonCamera:
-			m_CameraOffset = glm::vec3(0, 1, 0);
+			m_CameraOffset = glm::vec3(0, -1, 0);
 			break;
 
 		case thirdPersonCamera:
-			m_CameraOffset = glm::vec3(0, 2, -2);
+			m_CameraOffset = glm::vec3(0, -1, -3);
 			break;
 
 		default:
@@ -70,8 +68,6 @@ private:
 
 	glm::vec3 m_CameraOffset = glm::vec3(0, 0, 0); 
 
-	glm::vec3 m_direction; 
-
 public:
 
 	// Member Functions 
@@ -86,46 +82,16 @@ public:
 	*/
 	void OnUpdate(float dt) override
 	{
-		if (m_ThisCamera->position() != m_ThisObject->getComponent<TransformComponent>()->position())
+		if (m_CameraType == firstPersonCamera)
 		{
-			switch (m_CameraType)
-			{
-			case staticCamera:
-				break;
+			m_ThisCamera->m_position = (-m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset);
 
-			case firstPersonCamera:
-				
-				m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset;
-				
-				if (m_ThisCamera->orientation().y != m_ThisObject->getComponent<TransformComponent>()->orientation().y)
-				{
-					m_ThisCamera->m_orientation.y = m_ThisObject->getComponent<TransformComponent>()->orientation().y;
-					m_ThisCamera->m_orientation.z = m_ThisObject->getComponent<TransformComponent>()->orientation().z;
-					m_ThisCamera->m_orientation.w = m_ThisObject->getComponent<TransformComponent>()->orientation().w;
-				}
+			m_ThisCamera->m_orientation = -(m_ThisObject->getComponent<TransformComponent>()->orientation());
+		}
 
-				break;
-
-			case thirdPersonCamera:
-
-				m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset;
-				m_ThisCamera->lookAt(m_ThisObject->getComponent<TransformComponent>()->position());
-				
-				break;
-			
-			default:
-				
-				m_ThisCamera->m_position = m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset;
-
-				if (m_ThisCamera->orientation().y != m_ThisObject->getComponent<TransformComponent>()->orientation().y)
-				{
-					m_ThisCamera->m_orientation.y = m_ThisObject->getComponent<TransformComponent>()->orientation().y;
-					m_ThisCamera->m_orientation.z = m_ThisObject->getComponent<TransformComponent>()->orientation().z;
-					m_ThisCamera->m_orientation.w = m_ThisObject->getComponent<TransformComponent>()->orientation().w;
-				}
-
-				break;
-			}
+		else if (m_CameraType == thirdPersonCamera)
+		{
+			m_ThisCamera->m_position = (-m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset);
 		}
 	}
 
@@ -135,14 +101,7 @@ public:
 	*/
 	void OnMessage(const std::string m) override
 	{
-		if (m == "rotUp")
-		{
-			m_ThisCamera->pitch(-ROTATION_VALUE);
-		}
-		else if (m == "rotDown")
-		{
-			m_ThisCamera->pitch(ROTATION_VALUE);
-		}
+
 	}
 };
 

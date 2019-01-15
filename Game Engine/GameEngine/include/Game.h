@@ -14,6 +14,7 @@
 #include "Camera.h"
 #include "Scene.h"
 #include "Renderer.h"
+#include "GameManager.h"
 
 /*! \class The main game loop, this holds both the update and render functions. */
 class Game
@@ -45,9 +46,7 @@ private:
 
 	Renderer m_GameRenderer; 
 
-	GameObject m_MainCamera; 
-
-	GameObject m_PlayerObject; 
+	GameManager m_GameManager; 
 
 public:
 
