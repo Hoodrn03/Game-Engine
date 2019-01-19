@@ -6,6 +6,8 @@
 
 #include "GameObject.h"
 
+#include "GameManager.h"
+
 #include "TransformComponent.h"
 #include "MoveComponent.h"
 
@@ -142,6 +144,35 @@ class MoveRight : public InputCommand
 	}
 };
 
+/*! \class This will switch the current type of camera. */
+class NextCamera : public InputCommand
+{
+	void execute(GameObject& gameCamera) override
+	{
+		try
+		{
+			if (gameCamera.getComponent<CameraComponent>() != nullptr)
+			{
+				if (gameCamera.getComponent<CameraComponent>()->m_CameraType == firstPersonCamera)
+				{
+					gameCamera.getComponent<CameraComponent>()->m_SetCameraType(thirdPersonCamera);
+				}
+				else if (gameCamera.getComponent<CameraComponent>()->m_CameraType == thirdPersonCamera)
+				{
+					gameCamera.getComponent<CameraComponent>()->m_SetCameraType(staticCamera);
+				}
+				else
+				{
+					gameCamera.getComponent<CameraComponent>()->m_SetCameraType(firstPersonCamera); 
+				}
+			}
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << e.what();
+		}
+	}
+};
 
 
 /*! \struct This is the active event handler within the finished game. */
@@ -149,6 +180,9 @@ struct InputHandler
 {	
 	/*! \var A pointer to a player object. */
 	GameObject* m_playerCube;
+
+	/*! \var A pointer to the game manager. */
+	GameManager* m_GameManager; 
 
 	/*! \var This will hold all of the key commands and the action the key will cause. */
 	std::map<int, InputCommand*> m_controlMapping;
@@ -169,6 +203,23 @@ struct InputHandler
 	}
 
 	//-----------------------------------------------------------//
+	/*! Constructor
+	*Param One : A pointer to the player object.
+	*/
+	InputHandler(GameManager* gameManager) : m_GameManager(gameManager)
+	{
+		// the idea will be to map the keys directly from a config file that can be loaded in
+		// and changed on the fly
+
+		m_controlMapping[87] = new MoveForward;
+		m_controlMapping[83] = new MoveBackward;
+		m_controlMapping[65] = new MoveLeft;
+		m_controlMapping[68] = new MoveRight;
+
+		m_controlMapping[90] = new NextCamera; 
+	}
+
+	//-----------------------------------------------------------//
 	/*! HandleInputs : This will use a list of keys pressed this frame 
 	*					and activate thir related functions. 
 	*Param One : A vector of keys pressed. 
@@ -179,7 +230,14 @@ struct InputHandler
 		{
 			if(keyBuffer[mapEntry.first])
 			{
-				mapEntry.second->execute(*m_playerCube);
+				if (mapEntry.first == 90)
+				{
+					mapEntry.second->execute(*m_GameManager->m_GetGameObject("Camera"));
+				}
+				else
+				{
+					mapEntry.second->execute(*m_GameManager->m_GetGameObject("Player"));
+				}
 			}
 		}
 

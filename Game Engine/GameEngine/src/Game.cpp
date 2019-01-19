@@ -25,7 +25,7 @@ Game::Game()
 
 	m_CurrentScene = new Scene("assets/levels/levelOne.json");
 
-	m_inputHandler = new InputHandler(m_GameManager.m_GetGameObject("Player"));
+	m_inputHandler = new InputHandler(&m_GameManager);
 }
 
 //-----------------------------------------------------------//

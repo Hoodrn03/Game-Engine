@@ -115,7 +115,37 @@ public:
 	/*! SetCameraOffset
 	*Param One : The vector (X, Y, Z) to offset the camera by. 
 	*/
-	void m_SetCameraOffset(glm::vec3 newCameraOffset) { m_CameraOffset = newCameraOffset; }
+	void m_SetCameraOffset(glm::vec3 newCameraOffset) 
+	{ 
+		m_CameraOffset = newCameraOffset; 
+	}
+
+	//-----------------------------------------------------------//
+	/*! SetCameraType : This will be used to set the type for the camera. 
+	*Param One : The new type for the camera. 
+	*/
+	void m_SetCameraType(cameraType newType)
+	{
+		m_CameraType = newType; 
+
+		switch (m_CameraType)
+		{
+		case staticCamera:
+			m_CameraOffset = glm::vec3(0, 0, 0);
+			break;
+
+		case firstPersonCamera:
+			m_CameraOffset = glm::vec3(0, -0.75, 0);
+			break;
+
+		case thirdPersonCamera:
+			m_CameraOffset = glm::vec3(0, -1, -3);
+			break;
+
+		default:
+			break;
+		}
+	}
 
 	//-----------------------------------------------------------//
 	/*! OnUpdate : This will be used to call any update functions for this component.
