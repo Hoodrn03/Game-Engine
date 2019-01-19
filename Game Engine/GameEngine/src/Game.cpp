@@ -1,5 +1,4 @@
 /*! \file This will hold the class definitions for the class Game.h */
-// By Ryan Hood. 
 
 #include <fstream>
 #include <sstream>
@@ -56,6 +55,11 @@ void Game::m_Update()
 	m_GameManager.m_Update(m_dt); 
 }
 
+//-----------------------------------------------------------//
+/*! Update Rotation : This will be used to update the rotation of the main game objets. 
+*Param One : The direction of the mouse on the X axis. 
+*Param Two : The direction of the mouse on the Y axis. 
+*/
 void Game::m_UpdateRotation(float xAngle, float yAngle)
 {
 	m_GameManager.RotateWithMouse(xAngle, yAngle); 

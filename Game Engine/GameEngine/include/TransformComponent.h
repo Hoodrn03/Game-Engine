@@ -17,8 +17,6 @@ class TransformComponent : public Component
 {
 public:
 
-	// Member Functions 
-
 	//-----------------------------------------------------------//
 	/*! Constructor
 	*
@@ -27,14 +25,14 @@ public:
 
 	//-----------------------------------------------------------//
 	/*! Constructor
-	*Param One : The position in world space for the connected game object. 
+	*Param One : The position in world space for the connected game object.
 	*/
 	TransformComponent(const glm::vec3& pos) : m_position(pos), m_orientation(1, 0, 0, 0), m_scale(1.0f) {}
 
 	//-----------------------------------------------------------//
 	/*! Constructor
 	*Param One : The position in world space for the connected game object.
-	*Param Two : The direction the game object is facing. 
+	*Param Two : The direction the game object is facing.
 	*/
 	TransformComponent(const glm::vec3& pos, const glm::quat& orient) : m_position(pos), m_orientation(orient), m_scale(1.0f) {}
 
@@ -42,9 +40,12 @@ public:
 	/*! Constructor
 	*Param One : The position in world space for the connected game object.
 	*Param Two : The direction the game object is facing.
-	*Param Three : The scaled size of the game object. 
+	*Param Three : The scaled size of the game object.
 	*/
 	TransformComponent(const glm::vec3& pos, const glm::quat& orient, const glm::vec3& scale) : m_position(pos), m_orientation(orient), m_scale(scale) {}
+
+
+	// Member Functions 
 
 	//-----------------------------------------------------------//
 	/*! OnUpdate : This will be used to update this component. 

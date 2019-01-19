@@ -17,18 +17,23 @@ class GameObject
 
 public: 
 
+	/*! \var This will be the tag for the game object, it's identifier. */
 	std::string m_id = "Null";
 
 	// Member Functions 
 public:
 
+	//-----------------------------------------------------------//
+	/*! Update : This will be used to call all of the update functions for all of the 
+	*				connected components. 
+	*
+	*/
 	void m_Update(float dt)
 	{
 		std::for_each(m_components.begin(), m_components.end(), [](std::pair<std::type_index, Component*> element) 
 		{	
 			element.second->OnUpdate(0.f); 
-		}
-		);
+		});
 	}
 
 	/*! \template This will be used to get another componet which may be attatched to the 

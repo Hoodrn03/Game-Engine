@@ -22,8 +22,6 @@ public:
 
 	/*! \var The field of view for the camera. */
 	float m_fov;
-	
-	glm::mat4 m_ViewMatrix; 
 
 	// Member Functions. 
 

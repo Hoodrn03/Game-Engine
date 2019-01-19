@@ -1,7 +1,6 @@
 /*! \file This will be the engine core which will be used on windows operating 
 *			systems. 
 */
-// By Ryan Hood. 
 
 #pragma once
 

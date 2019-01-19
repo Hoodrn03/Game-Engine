@@ -1,7 +1,6 @@
 /*! \file This will hold the main game loop; meanining it will control all of 
 *			rendering and updating of game logic for the engine.
 */
-// By Ryan Hood. 
 
 #pragma once
 
@@ -44,8 +43,10 @@ private:
 	/*! \var This will be the current scene loaded into the game engine. */
 	Scene* m_CurrentScene; 
 
+	/*! \var This will handle all of the rendering for the game. */
 	Renderer m_GameRenderer; 
 
+	/*! \var This will control the main game objects for the game. */
 	GameManager m_GameManager; 
 
 public:
@@ -58,8 +59,10 @@ public:
 	*/
 	InputHandler* m_inputHandler;
 
+	/*! \var The delta (change) in time since last frame. */
 	float m_dt = 0; 
 
+	/*! \var The current time and last time used to work out delta time. */
 	double m_CurrentTime, m_LastTime; 
 
 	// Member Functons 
@@ -72,6 +75,11 @@ public:
 	*/
 	void m_Update();
 
+	//-----------------------------------------------------------//
+	/*! Update Rotation : This will be used to update the rotation of the main game objets.
+	*Param One : The direction of the mouse on the X axis.
+	*Param Two : The direction of the mouse on the Y axis.
+	*/
 	void m_UpdateRotation(float xAngle, float yAngle);
 
 	//-----------------------------------------------------------//

@@ -1,3 +1,5 @@
+/*! \file This will be used to manage all of the key game objects within the scene. */
+
 #pragma once
 
 #include "GameObject.h"
@@ -8,11 +10,16 @@
 #include "Model.h"
 #include "ModelComponent.h"
 
+/*! \class This object will manage most of the key objects within the game. */
 class GameManager
 {
 
 public:
 
+	//-----------------------------------------------------------//
+	/*! Constructor
+	*
+	*/
 	GameManager() 
 	{
 		GameObject *l_TempObject = new GameObject; 
@@ -38,20 +45,33 @@ public:
 		
 	}
 
+	//-----------------------------------------------------------//
+	/*! Deconstructor
+	*
+	*/
 	~GameManager() {}
 
 	// Data Members
 
 private:
 
+	/*! \var A list of game object managed by this manager. */
 	std::vector<GameObject*> v_GameObjects; 
 
 	// Member Functions
 
 public:
 
+	//-----------------------------------------------------------//
+	/*! GetGameObject : This will be used to get a specific game object.  
+	*Param One : The position within the vector for the object. 
+	*/
 	GameObject* m_GetGameObject(int identifier) { return v_GameObjects[identifier]; }
 
+	//-----------------------------------------------------------//
+	/*! GetGameObject : This will be used to get a specific game object.
+	*Param One : The name givdn to a specific game object. 
+	*/
 	GameObject* m_GetGameObject(std::string identifier)
 	{
 		if (v_GameObjects.size() > 0)
@@ -68,6 +88,10 @@ public:
 		return nullptr;
 	}
 
+	//-----------------------------------------------------------//
+	/*! GetPlayerObject : This will search the vector for an object with the tag Player, 
+	*
+	*/
 	GameObject * m_GetPlayerObject() 
 	{
 		if (v_GameObjects.size() > 0)
@@ -84,6 +108,10 @@ public:
 		return nullptr; 
 	}
 
+	//-----------------------------------------------------------//
+	/*! GetCamera : This will look for a camera object within the vector and return the attached camera. 
+	*
+	*/
 	Camera * m_GetCamera()
 	{
 
@@ -101,6 +129,10 @@ public:
 		return nullptr;
 	}
 
+	//-----------------------------------------------------------//
+	/*! Update : This will be used to update all of the game objects. 
+	*Param One : The change in time from last frame. 
+	*/
 	void m_Update(float dt)
 	{
 		if (v_GameObjects.size() > 0)
@@ -112,6 +144,11 @@ public:
 		}
 	}
 
+	//-----------------------------------------------------------//
+	/*! RotateWithMouse : Used to update the rotation of key game objects. 
+	*Param One : The direction of the mouse in the X axis
+	*Param Two : The direction of the mouse in the Y axis
+	*/
 	void RotateWithMouse(float moveX, float moveY)
 	{
 		if (moveX != 0)
@@ -170,6 +207,10 @@ public:
 		
 	}
 
+	//-----------------------------------------------------------//
+	/*! OnMessage : This will be use to pass messages to specific objects. 
+	*
+	*/
 	void m_OnMessage(std::string m)
 	{
 	}

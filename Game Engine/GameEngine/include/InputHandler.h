@@ -1,5 +1,4 @@
 /*! \file This will be used to handle all of the inputs for the game engine. */
-// By Ryan Hood. 
 
 #pragma once
 #include <map>
@@ -29,6 +28,7 @@ public:
 	virtual void execute(GameObject& playerBackground) = 0;
 };
 
+/*! \class Used to rotate the player. */
 class RotLeft : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
@@ -47,6 +47,7 @@ class RotLeft : public InputCommand
 	}
 };
 
+/*! \class Used to rotate the player. */
 class RotRight : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
@@ -65,6 +66,7 @@ class RotRight : public InputCommand
 	}
 };
 
+/*! \class Used to move the player. */
 class MoveForward : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
@@ -83,6 +85,7 @@ class MoveForward : public InputCommand
 	}
 };
 
+/*! \class Used to move the player. */
 class MoveBackward : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
@@ -101,6 +104,7 @@ class MoveBackward : public InputCommand
 	}
 };
 
+/*! \class Used to move the player. */
 class MoveLeft : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
@@ -119,6 +123,7 @@ class MoveLeft : public InputCommand
 	}
 };
 
+/*! \class Used to move the player. */
 class MoveRight : public InputCommand
 {
 	void execute(GameObject& playerBackground) override
@@ -145,8 +150,6 @@ struct InputHandler
 	/*! \var A pointer to a player object. */
 	GameObject* m_playerCube;
 
-	GameObject* m_UniversalCommands; 
-
 	/*! \var This will hold all of the key commands and the action the key will cause. */
 	std::map<int, InputCommand*> m_controlMapping;
 
@@ -163,18 +166,6 @@ struct InputHandler
 		m_controlMapping[83] = new MoveBackward; 
 		m_controlMapping[65] = new MoveLeft;
 		m_controlMapping[68] = new MoveRight; 
-	}
-
-	InputHandler(GameObject* playerCube, GameObject* utilityObject) : 
-		m_playerCube(playerCube), m_UniversalCommands(utilityObject)
-	{
-		// the idea will be to map the keys directly from a config file that can be loaded in
-		// and changed on the fly
-
-		m_controlMapping[87] = new MoveForward;
-		m_controlMapping[83] = new MoveBackward;
-		m_controlMapping[65] = new MoveLeft;
-		m_controlMapping[68] = new MoveRight;
 	}
 
 	//-----------------------------------------------------------//

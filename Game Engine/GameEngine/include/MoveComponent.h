@@ -1,3 +1,4 @@
+/*! \file This component will be used to move the connected game object. */
 
 #pragma once
 
@@ -12,19 +13,29 @@
 #define TRANSLATE_VALUE 0.01f
 #define ROTATION_VALUE 0.005f
 
+/*! \class This component will be used to move the connected game object. */
 class MoveComponent : public Component
 {
 
 public: 
 
+	//-----------------------------------------------------------//
+	/*! Constructor
+	*Param One : This is the object this component is connected to.
+	*/
 	MoveComponent(GameObject * movableObject) : m_ThisObject(movableObject) {};
 
+	//-----------------------------------------------------------//
+	/*! Deconstructor
+	*
+	*/
 	~MoveComponent() {};
 
 private:
 
 	// Data Members 
 
+	/*! \var The game object this is connected to. */
 	GameObject * m_ThisObject; 
 
 public:
