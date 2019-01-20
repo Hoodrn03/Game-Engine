@@ -109,7 +109,7 @@ public:
 	*Param One : The angle of whic to rotate by. 
 	*Param Two : The fixed axix to rotate the object around. 
 	*/
-	void rotate(float angle, const glm::vec3 &axis) { m_orientation *= glm::angleAxis(angle, axis * m_orientation); }
+	void rotate(float angle, const glm::vec3 &axis) { m_orientation *= glm::angleAxis(angle, axis); }
 	
 	//-----------------------------------------------------------//
 	/*! Rotate : This will rotate the game object around a single axis.
@@ -118,7 +118,7 @@ public:
 	*Param Three : : The Y for the fixed axix to rotate the object around.
 	*Param Four : The Z for the fixed axix to rotate the object around.
 	*/
-	void rotate(float angle, float x, float y, float z) { m_orientation *= glm::angleAxis(angle, glm::vec3(x, y, z) * m_orientation); }
+	void rotate(float angle, float x, float y, float z) { m_orientation *= glm::angleAxis(angle, glm::vec3(x, y, z)); }
 
 	//-----------------------------------------------------------//
 	/*! ScaleUp : This will increate the scale of the game object by 'v'. 

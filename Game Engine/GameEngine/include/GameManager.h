@@ -184,20 +184,20 @@ public:
 			{
 				for (unsigned int i = 0; i < v_GameObjects.size(); i++)
 				{
-					if (v_GameObjects[i]->m_id == "Player")
+					if (v_GameObjects[i]->m_id == "Camera")
 					{
 						if (moveY > 0)
 						{
-							if (v_GameObjects[i]->getComponent<MoveComponent>() != nullptr)
+							if (v_GameObjects[i]->getComponent<CameraComponent>() != nullptr)
 							{
-								v_GameObjects[i]->getComponent<MoveComponent>()->OnMessage("rotUp");
+								v_GameObjects[i]->getComponent<CameraComponent>()->OnMessage("rotUp");
 							}
 						}
 						else if (moveY < 0)
 						{
-							if (v_GameObjects[i]->getComponent<MoveComponent>() != nullptr)
+							if (v_GameObjects[i]->getComponent<CameraComponent>() != nullptr)
 							{
-								v_GameObjects[i]->getComponent<MoveComponent>()->OnMessage("rotDown");
+								v_GameObjects[i]->getComponent<CameraComponent>()->OnMessage("rotDown");
 							}
 						}
 					}

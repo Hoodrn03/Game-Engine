@@ -157,7 +157,7 @@ public:
 		{
 			m_ThisCamera->m_position = (-m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset);
 
-			m_ThisCamera->m_orientation = glm::quat(-m_ThisObject->getComponent<TransformComponent>()->orientation());
+			m_ThisCamera->m_orientation.y = m_ThisObject->getComponent<TransformComponent>()->orientation().y;
 		}
 
 		else if (m_CameraType == thirdPersonCamera)
@@ -172,7 +172,17 @@ public:
 	*/
 	void OnMessage(const std::string m) override
 	{
-
+		if (m_CameraType == firstPersonCamera)
+		{
+			if (m == "rotUp")
+			{
+				m_ThisCamera->pitch(-ROTATION_VALUE);
+			}
+			else if (m == "rotDown")
+			{
+				m_ThisCamera->pitch(ROTATION_VALUE);
+			}
+		}
 	}
 };
 

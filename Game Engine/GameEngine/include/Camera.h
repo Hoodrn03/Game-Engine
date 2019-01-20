@@ -91,7 +91,7 @@ public:
 	*Param One : The angle in which to rotate by. 
 	*Param Two : The axis to rotate the camrea around. 
 	*/
-	void rotate(float angle, const glm::vec3 &axis) { m_orientation *= glm::angleAxis(angle, axis * m_orientation); }
+	void rotate(float angle, const glm::vec3 &axis) { m_orientation *= glm::angleAxis(angle, axis); }
 
 	//-----------------------------------------------------------//
 	/*! Rotate : This will rotate the camera by a specific angle.
@@ -100,7 +100,7 @@ public:
 	*Param Three : The new Y value for the rotation's axis.
 	*Param Four : The new Z value for the rotation's axis.
 	*/
-	void rotate(float angle, float x, float y, float z) { m_orientation *= glm::angleAxis(angle, glm::vec3(x, y, z) * m_orientation); }
+	void rotate(float angle, float x, float y, float z) { m_orientation *= glm::angleAxis(angle, glm::vec3(x, y, z)); }
 
 	//-----------------------------------------------------------//
 	/*! Yaw : This will rotate the camera by the angle around the Z-Axis.
