@@ -38,6 +38,9 @@ private:
 	/*! \var The game object this is connected to. */
 	GameObject * m_ThisObject; 
 
+	/*! \var This will be used move the game object in a direction. */
+	glm::vec3 m_MoveVector; 
+
 public:
 
 	// Member Functions 
@@ -48,7 +51,13 @@ public:
 	*/
 	void OnUpdate(float dt) override
 	{
+		// If the move vector is not equal to (0, 0, 0) the object should be moving. 
+		if (m_MoveVector != glm::vec3(0, 0, 0))
+		{
+			m_ThisObject->getComponent<TransformComponent>()->translate(m_MoveVector);
 
+			m_MoveVector = glm::vec3(0, 0, 0);
+		}
 	}
 
 	//-----------------------------------------------------------//
@@ -57,23 +66,27 @@ public:
 	*/
 	void OnMessage(const std::string m) override
 	{
+
+		// Use a direction in which to move and multiply it by the objects orientation; this will then use the 
+		// direction the object is facing to move it in that direction. 
 		if (m == "forward")
 		{
-			m_ThisObject->getComponent<TransformComponent>()->translate(0, 0, -TRANSLATE_VALUE);
+			m_MoveVector = glm::vec3(0, 0, -TRANSLATE_VALUE) * m_ThisObject->getComponent<TransformComponent>()->m_orientation;
 		}
 		else if (m == "backward")
 		{
-			m_ThisObject->getComponent<TransformComponent>()->translate(0, 0, TRANSLATE_VALUE);
+			m_MoveVector = glm::vec3(0, 0, TRANSLATE_VALUE) * m_ThisObject->getComponent<TransformComponent>()->m_orientation; 
 		}
 		else if (m == "right")
 		{
-			m_ThisObject->getComponent<TransformComponent>()->translate(TRANSLATE_VALUE, 0, 0);
+			m_MoveVector = glm::vec3(TRANSLATE_VALUE, 0, 0) * m_ThisObject->getComponent<TransformComponent>()->m_orientation;
 		}
 		else if (m == "left")
 		{
-			m_ThisObject->getComponent<TransformComponent>()->translate(-TRANSLATE_VALUE, 0, 0);
+			m_MoveVector = glm::vec3(-TRANSLATE_VALUE, 0, 0) * m_ThisObject->getComponent<TransformComponent>()->m_orientation;
 		}
-		else if (m == "rotLeft")
+
+		if(m == "rotLeft")
 		{
 			m_ThisObject->getComponent<TransformComponent>()->yaw(ROTATION_VALUE); 
 		}

@@ -158,6 +158,7 @@ public:
 			m_ThisCamera->m_position = (-m_ThisObject->getComponent<TransformComponent>()->position() + m_CameraOffset);
 
 			m_ThisCamera->m_orientation.y = m_ThisObject->getComponent<TransformComponent>()->orientation().y;
+			m_ThisCamera->m_orientation.w = m_ThisObject->getComponent<TransformComponent>()->orientation().w;
 		}
 
 		else if (m_CameraType == thirdPersonCamera)
@@ -172,6 +173,8 @@ public:
 	*/
 	void OnMessage(const std::string m) override
 	{
+		/*
+
 		if (m_CameraType == firstPersonCamera)
 		{
 			if (m == "rotUp")
@@ -183,6 +186,8 @@ public:
 				m_ThisCamera->pitch(ROTATION_VALUE);
 			}
 		}
+
+		*/
 	}
 };
 
