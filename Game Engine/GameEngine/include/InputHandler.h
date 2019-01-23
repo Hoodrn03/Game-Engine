@@ -1,8 +1,12 @@
 /*! \file This will be used to handle all of the inputs for the game engine. */
 
 #pragma once
+
 #include <map>
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 #include "GameObject.h"
 
@@ -28,11 +32,15 @@ public:
 	*
 	*/
 	virtual void execute(GameObject& playerBackground) = 0;
+
+	virtual const char* m_ClassName() = 0;
 };
 
 /*! \class Used to rotate the player. */
 class RotLeft : public InputCommand
 {
+	virtual const char* m_ClassName() { return "RotLeft"; };
+
 	void execute(GameObject& playerBackground) override
 	{
 		try
@@ -52,6 +60,8 @@ class RotLeft : public InputCommand
 /*! \class Used to rotate the player. */
 class RotRight : public InputCommand
 {
+	virtual const char* m_ClassName() { return "RotRight"; };
+
 	void execute(GameObject& playerBackground) override
 	{
 		try
@@ -71,6 +81,8 @@ class RotRight : public InputCommand
 /*! \class Used to move the player. */
 class MoveForward : public InputCommand
 {
+	virtual const char* m_ClassName() { return "MoveForward"; };
+
 	void execute(GameObject& playerBackground) override
 	{
 		try
@@ -90,6 +102,8 @@ class MoveForward : public InputCommand
 /*! \class Used to move the player. */
 class MoveBackward : public InputCommand
 {
+	virtual const char* m_ClassName() { return "MoveBackward"; };
+
 	void execute(GameObject& playerBackground) override
 	{
 		try
@@ -109,6 +123,8 @@ class MoveBackward : public InputCommand
 /*! \class Used to move the player. */
 class MoveLeft : public InputCommand
 {
+	virtual const char* m_ClassName() { return "MoveLeft"; };
+
 	void execute(GameObject& playerBackground) override
 	{
 		try
@@ -128,6 +144,8 @@ class MoveLeft : public InputCommand
 /*! \class Used to move the player. */
 class MoveRight : public InputCommand
 {
+	virtual const char* m_ClassName() { return "MoveRight"; };
+
 	void execute(GameObject& playerBackground) override
 	{
 		try
@@ -147,6 +165,8 @@ class MoveRight : public InputCommand
 /*! \class This will switch the current type of camera. */
 class NextCamera : public InputCommand
 {
+	virtual const char* m_ClassName() { return "NextCamera"; }; 
+
 	void execute(GameObject& gameCamera) override
 	{
 		try
@@ -211,13 +231,109 @@ struct InputHandler
 		// the idea will be to map the keys directly from a config file that can be loaded in
 		// and changed on the fly
 
-		m_controlMapping[87] = new MoveForward;
-		m_controlMapping[83] = new MoveBackward;
-		m_controlMapping[65] = new MoveLeft;
-		m_controlMapping[68] = new MoveRight;
-
-		m_controlMapping[90] = new NextCamera; 
+		m_LoadConfig(); 
 	}
+
+	//-----------------------------------------------------------//
+	/*! Deconstructor 
+	*
+	*/
+	~InputHandler()
+	{
+		m_OutputConfig(); 
+	}
+
+	//-----------------------------------------------------------//
+	/*! LoadConfig : This will be used to read the config file for the game and 
+	*					adjust the key commands used. 
+	*
+	*/
+	void m_LoadConfig()
+	{
+		ifstream l_MyFile;
+
+		std::string l_Line; 
+
+		l_MyFile.open("assets/config/config.txt");
+
+		if (l_MyFile.is_open())
+		{
+			while (getline(l_MyFile, l_Line))
+			{
+				std::stringstream l_ss(l_Line);
+
+				int l_InputKey;
+				std::string l_ActionClass; 
+
+				l_ss >> l_InputKey; 
+
+				l_ss >> l_ActionClass;
+
+				if (l_ActionClass == "MoveForward")
+				{
+					m_controlMapping[l_InputKey] = new MoveForward;
+				}
+				else if (l_ActionClass == "MoveBackward")
+				{
+					m_controlMapping[l_InputKey] = new MoveBackward;
+				}
+				else if (l_ActionClass == "MoveLeft")
+				{
+					m_controlMapping[l_InputKey] = new MoveLeft;
+				}
+				else if (l_ActionClass == "MoveRight")
+				{
+					m_controlMapping[l_InputKey] = new MoveRight;
+				}
+				else if (l_ActionClass == "NextCamera")
+				{
+					m_controlMapping[l_InputKey] = new NextCamera;
+				}
+			}
+
+			l_MyFile.close();
+
+			std::cout << "Config Loaded" << std::endl;
+		}
+	}
+
+	//-----------------------------------------------------------//
+	/*! OutputConfig : This will write the current key commands for the engine to a 
+	*					config file within assets. 
+	*
+	*/
+	void m_OutputConfig()
+	{
+
+		ofstream l_MyFile;
+
+		l_MyFile.open("assets/config/config.txt");
+
+		if (l_MyFile.is_open())
+		{
+			for (auto const& x : m_controlMapping)
+			{
+				l_MyFile << x.first << " "; 
+				l_MyFile << x.second->m_ClassName() << std::endl;
+			}
+
+			l_MyFile.close(); 
+
+			std::cout << "Config Updated" << std::endl;
+		}
+		else
+		{
+			std::cout << "Error opening file." << std::endl;
+		}
+
+	}
+
+	//-----------------------------------------------------------//
+	/*! ClassName : This will beused to get the name of the class, used for the 
+	*				reading/writing to the config file. 
+	*
+	*/
+	virtual const char* m_ClassName() { return "InputHandler"; }
 
 	//-----------------------------------------------------------//
 	/*! HandleInputs : This will use a list of keys pressed this frame 
