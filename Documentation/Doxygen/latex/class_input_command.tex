@@ -1,0 +1,50 @@
+\hypertarget{class_input_command}{}\section{Input\+Command Class Reference}
+\label{class_input_command}\index{Input\+Command@{Input\+Command}}
+
+
+{\ttfamily \#include $<$Input\+Handler.\+h$>$}
+
+Inheritance diagram for Input\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.481482cm]{class_input_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_input_command_a203385c2bfacb53d17ac5749ee274dc0}{$\sim$\+Input\+Command}} ()
+\item 
+virtual void \mbox{\hyperlink{class_input_command_a14fb500713d0813165f0c864d47553a0}{execute}} (\mbox{\hyperlink{class_game_object}{Game\+Object}} \&player\+Background)=0
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_input_command_aa28e1877f850c588b5a2dff8d41eb627}{m\+\_\+\+Class\+Name}} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_input_command_a203385c2bfacb53d17ac5749ee274dc0}\label{class_input_command_a203385c2bfacb53d17ac5749ee274dc0}} 
+\index{Input\+Command@{Input\+Command}!````~Input\+Command@{$\sim$\+Input\+Command}}
+\index{````~Input\+Command@{$\sim$\+Input\+Command}!Input\+Command@{Input\+Command}}
+\subsubsection{\texorpdfstring{$\sim$\+Input\+Command()}{~InputCommand()}}
+{\footnotesize\ttfamily virtual Input\+Command\+::$\sim$\+Input\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Deconstructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input_command_a14fb500713d0813165f0c864d47553a0}\label{class_input_command_a14fb500713d0813165f0c864d47553a0}} 
+\index{Input\+Command@{Input\+Command}!execute@{execute}}
+\index{execute@{execute}!Input\+Command@{Input\+Command}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual void Input\+Command\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} \&}]{player\+Background }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Execute \+: \mbox{\hyperlink{class_this}{This}} will be used to run code from a key press. \mbox{\Hypertarget{class_input_command_aa28e1877f850c588b5a2dff8d41eb627}\label{class_input_command_aa28e1877f850c588b5a2dff8d41eb627}} 
+\index{Input\+Command@{Input\+Command}!m\+\_\+\+Class\+Name@{m\+\_\+\+Class\+Name}}
+\index{m\+\_\+\+Class\+Name@{m\+\_\+\+Class\+Name}!Input\+Command@{Input\+Command}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Class\+Name()}{m\_ClassName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Input\+Command\+::m\+\_\+\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Class\+Name \+: \mbox{\hyperlink{class_this}{This}} will be used to help load and output this action. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_input_handler_8h}{Input\+Handler.\+h}}\end{DoxyCompactItemize}

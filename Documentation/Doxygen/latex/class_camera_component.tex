@@ -1,0 +1,128 @@
+\hypertarget{class_camera_component}{}\section{Camera\+Component Class Reference}
+\label{class_camera_component}\index{Camera\+Component@{Camera\+Component}}
+
+
+{\ttfamily \#include $<$Camera\+Component.\+h$>$}
+
+Inheritance diagram for Camera\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera_component}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_component_a54997069f98c746e4d6df9e2ce8b5416}{Camera\+Component}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$connect\+Camera, \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$connect\+Object)
+\item 
+\mbox{\hyperlink{class_camera_component_a638e0e8bf55a52b735f8ab08eb0ad631}{Camera\+Component}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$connect\+Camera, \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$connect\+Object, glm\+::vec3 offset)
+\item 
+\mbox{\hyperlink{class_camera_component_a05759ae68f3830c8b79314640ad1471c}{Camera\+Component}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$connect\+Camera, \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$connect\+Object, \mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}} selection)
+\item 
+\mbox{\hyperlink{class_camera_component_aab0e46dcfc4a845c7373fe1142d4c981}{Camera\+Component}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$connect\+Camera, \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$connect\+Object, glm\+::vec3 offset, \mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}} selection)
+\item 
+\mbox{\hyperlink{class_camera_component_a977e080c45152719c5e6335cfb0698fc}{$\sim$\+Camera\+Component}} ()
+\item 
+\mbox{\hyperlink{class_camera}{Camera}} \& \mbox{\hyperlink{class_camera_component_a1fbb5ea1f011ec8ea75688566c8bb545}{m\+\_\+\+Get\+Camera}} ()
+\item 
+void \mbox{\hyperlink{class_camera_component_a4db1be92619451a81d54269e13232a1f}{m\+\_\+\+Set\+Camera\+Offset}} (glm\+::vec3 new\+Camera\+Offset)
+\item 
+void \mbox{\hyperlink{class_camera_component_aee0c00e1dbb83fd953b718e278c90603}{m\+\_\+\+Set\+Camera\+Type}} (\mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}} new\+Type)
+\item 
+void \mbox{\hyperlink{class_camera_component_aa0391037fd478ea1a602835ea64091ba}{On\+Update}} (float dt) override
+\item 
+void \mbox{\hyperlink{class_camera_component_a1cd7e6036568be5bf45d249d8f96a596}{On\+Message}} (const std\+::string m) override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}} \mbox{\hyperlink{class_camera_component_ac2c53e574361e9069c32baa344e90eae}{m\+\_\+\+Camera\+Type}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_camera_component_a54997069f98c746e4d6df9e2ce8b5416}\label{class_camera_component_a54997069f98c746e4d6df9e2ce8b5416}} 
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{Camera\+Component()}{CameraComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Camera\+Component\+::\+Camera\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{connect\+Camera,  }\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$}]{connect\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} camera object connected to this object. Param Two \+: \mbox{\hyperlink{class_the}{The}} game object this component is connected to. \mbox{\Hypertarget{class_camera_component_a638e0e8bf55a52b735f8ab08eb0ad631}\label{class_camera_component_a638e0e8bf55a52b735f8ab08eb0ad631}} 
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{Camera\+Component()}{CameraComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Camera\+Component\+::\+Camera\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{connect\+Camera,  }\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$}]{connect\+Object,  }\item[{glm\+::vec3}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} camera object connected to this object. Param Two \+: \mbox{\hyperlink{class_the}{The}} game object this component is connected to. Param Three \+: \mbox{\hyperlink{class_the}{The}} offset of the camera from the game object. \mbox{\Hypertarget{class_camera_component_a05759ae68f3830c8b79314640ad1471c}\label{class_camera_component_a05759ae68f3830c8b79314640ad1471c}} 
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{Camera\+Component()}{CameraComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Camera\+Component\+::\+Camera\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{connect\+Camera,  }\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$}]{connect\+Object,  }\item[{\mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}}}]{selection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} camera object connected to this object. Param Two \+: \mbox{\hyperlink{class_the}{The}} game object this component is connected to. Param Three \+: \mbox{\hyperlink{class_the}{The}} type for this camera. \mbox{\Hypertarget{class_camera_component_aab0e46dcfc4a845c7373fe1142d4c981}\label{class_camera_component_aab0e46dcfc4a845c7373fe1142d4c981}} 
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\index{Camera\+Component@{Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{Camera\+Component()}{CameraComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Camera\+Component\+::\+Camera\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{connect\+Camera,  }\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$}]{connect\+Object,  }\item[{glm\+::vec3}]{offset,  }\item[{\mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}}}]{selection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} camera object connected to this object. Param Two \+: \mbox{\hyperlink{class_the}{The}} game object this component is connected to. Param Three \+: \mbox{\hyperlink{class_the}{The}} offset of the camera from the game object. Param Four \+: \mbox{\hyperlink{class_the}{The}} type for this camera. \mbox{\Hypertarget{class_camera_component_a977e080c45152719c5e6335cfb0698fc}\label{class_camera_component_a977e080c45152719c5e6335cfb0698fc}} 
+\index{Camera\+Component@{Camera\+Component}!````~Camera\+Component@{$\sim$\+Camera\+Component}}
+\index{````~Camera\+Component@{$\sim$\+Camera\+Component}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{$\sim$\+Camera\+Component()}{~CameraComponent()}}
+{\footnotesize\ttfamily Camera\+Component\+::$\sim$\+Camera\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Deconstructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_component_a1fbb5ea1f011ec8ea75688566c8bb545}\label{class_camera_component_a1fbb5ea1f011ec8ea75688566c8bb545}} 
+\index{Camera\+Component@{Camera\+Component}!m\+\_\+\+Get\+Camera@{m\+\_\+\+Get\+Camera}}
+\index{m\+\_\+\+Get\+Camera@{m\+\_\+\+Get\+Camera}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Get\+Camera()}{m\_GetCamera()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}}\& Camera\+Component\+::m\+\_\+\+Get\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get\+Camera \+: \mbox{\hyperlink{class_this}{This}} will return the connected game object. \mbox{\Hypertarget{class_camera_component_a4db1be92619451a81d54269e13232a1f}\label{class_camera_component_a4db1be92619451a81d54269e13232a1f}} 
+\index{Camera\+Component@{Camera\+Component}!m\+\_\+\+Set\+Camera\+Offset@{m\+\_\+\+Set\+Camera\+Offset}}
+\index{m\+\_\+\+Set\+Camera\+Offset@{m\+\_\+\+Set\+Camera\+Offset}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Set\+Camera\+Offset()}{m\_SetCameraOffset()}}
+{\footnotesize\ttfamily void Camera\+Component\+::m\+\_\+\+Set\+Camera\+Offset (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{new\+Camera\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set\+Camera\+Offset Param One \+: \mbox{\hyperlink{class_the}{The}} vector (X, Y, Z) to offset the camera by. \mbox{\Hypertarget{class_camera_component_aee0c00e1dbb83fd953b718e278c90603}\label{class_camera_component_aee0c00e1dbb83fd953b718e278c90603}} 
+\index{Camera\+Component@{Camera\+Component}!m\+\_\+\+Set\+Camera\+Type@{m\+\_\+\+Set\+Camera\+Type}}
+\index{m\+\_\+\+Set\+Camera\+Type@{m\+\_\+\+Set\+Camera\+Type}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Set\+Camera\+Type()}{m\_SetCameraType()}}
+{\footnotesize\ttfamily void Camera\+Component\+::m\+\_\+\+Set\+Camera\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}}}]{new\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set\+Camera\+Type \+: \mbox{\hyperlink{class_this}{This}} will be used to set the type for the camera. Param One \+: \mbox{\hyperlink{class_the}{The}} new type for the camera. \mbox{\Hypertarget{class_camera_component_a1cd7e6036568be5bf45d249d8f96a596}\label{class_camera_component_a1cd7e6036568be5bf45d249d8f96a596}} 
+\index{Camera\+Component@{Camera\+Component}!On\+Message@{On\+Message}}
+\index{On\+Message@{On\+Message}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{On\+Message()}{OnMessage()}}
+{\footnotesize\ttfamily void Camera\+Component\+::\+On\+Message (\begin{DoxyParamCaption}\item[{const std\+::string}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+On\+Message \+: \mbox{\hyperlink{class_this}{This}} will be use to react to a key press if required. 
+
+Implements \mbox{\hyperlink{class_component_a1a880fe5e212cd7ef8241e220660417d}{Component}}.
+
+\mbox{\Hypertarget{class_camera_component_aa0391037fd478ea1a602835ea64091ba}\label{class_camera_component_aa0391037fd478ea1a602835ea64091ba}} 
+\index{Camera\+Component@{Camera\+Component}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily void Camera\+Component\+::\+On\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+On\+Update \+: \mbox{\hyperlink{class_this}{This}} will be used to call any update functions for this component. 
+
+Implements \mbox{\hyperlink{class_component_ab71d7f4b6d8792287a9b0c9e045acbe0}{Component}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_component_ac2c53e574361e9069c32baa344e90eae}\label{class_camera_component_ac2c53e574361e9069c32baa344e90eae}} 
+\index{Camera\+Component@{Camera\+Component}!m\+\_\+\+Camera\+Type@{m\+\_\+\+Camera\+Type}}
+\index{m\+\_\+\+Camera\+Type@{m\+\_\+\+Camera\+Type}!Camera\+Component@{Camera\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Camera\+Type}{m\_CameraType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_camera_component_8h_ab07ecb557631c59d8b7ec9c3db110dd5}{camera\+Type}} Camera\+Component\+::m\+\_\+\+Camera\+Type}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_camera_component_8h}{Camera\+Component.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\hypertarget{struct_input_handler}{}\section{Input\+Handler Struct Reference}
+\label{struct_input_handler}\index{Input\+Handler@{Input\+Handler}}
+
+
+{\ttfamily \#include $<$Input\+Handler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_input_handler_a951e34a63d07195f594b1469a1e0b859}{Input\+Handler}} (\mbox{\hyperlink{class_game_manager}{Game\+Manager}} $\ast$game\+Manager)
+\item 
+\mbox{\hyperlink{struct_input_handler_ac1f7efb54b34d433d6ffba62627452b6}{$\sim$\+Input\+Handler}} ()
+\item 
+void \mbox{\hyperlink{struct_input_handler_ae8150d9263151be0d480a382f2c16b02}{m\+\_\+\+Load\+Config}} ()
+\item 
+void \mbox{\hyperlink{struct_input_handler_aa133e6d963446578ab282095ca5df05a}{m\+\_\+\+Output\+Config}} ()
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{struct_input_handler_a4e77e8e4824b8287ae3a5d1af732677f}{m\+\_\+\+Class\+Name}} ()
+\item 
+void \mbox{\hyperlink{struct_input_handler_a250b665d3a9bc35bd8d6b544266e4faf}{handle\+Inputs}} (const std\+::vector$<$ bool $>$ \&key\+Buffer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ \mbox{\hyperlink{struct_input_handler_a02162590271ed44ae87ce77e89023026}{m\+\_\+player\+Cube}}
+\item 
+\mbox{\hyperlink{class_game_manager}{Game\+Manager}} $\ast$ \mbox{\hyperlink{struct_input_handler_ae2a439c9a0559ac885a1322d83cfce4b}{m\+\_\+\+Game\+Manager}}
+\item 
+std\+::map$<$ int, \mbox{\hyperlink{class_input_command}{Input\+Command}} $\ast$ $>$ \mbox{\hyperlink{struct_input_handler_abe853597d11b94e0668c8db6638a0548}{m\+\_\+control\+Mapping}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_input_handler_a951e34a63d07195f594b1469a1e0b859}\label{struct_input_handler_a951e34a63d07195f594b1469a1e0b859}} 
+\index{Input\+Handler@{Input\+Handler}!Input\+Handler@{Input\+Handler}}
+\index{Input\+Handler@{Input\+Handler}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{Input\+Handler()}{InputHandler()}}
+{\footnotesize\ttfamily Input\+Handler\+::\+Input\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_manager}{Game\+Manager}} $\ast$}]{game\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: A pointer to the player object. \mbox{\Hypertarget{struct_input_handler_ac1f7efb54b34d433d6ffba62627452b6}\label{struct_input_handler_ac1f7efb54b34d433d6ffba62627452b6}} 
+\index{Input\+Handler@{Input\+Handler}!````~Input\+Handler@{$\sim$\+Input\+Handler}}
+\index{````~Input\+Handler@{$\sim$\+Input\+Handler}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{$\sim$\+Input\+Handler()}{~InputHandler()}}
+{\footnotesize\ttfamily Input\+Handler\+::$\sim$\+Input\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Deconstructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_input_handler_a250b665d3a9bc35bd8d6b544266e4faf}\label{struct_input_handler_a250b665d3a9bc35bd8d6b544266e4faf}} 
+\index{Input\+Handler@{Input\+Handler}!handle\+Inputs@{handle\+Inputs}}
+\index{handle\+Inputs@{handle\+Inputs}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{handle\+Inputs()}{handleInputs()}}
+{\footnotesize\ttfamily void Input\+Handler\+::handle\+Inputs (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{key\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Handle\+Inputs \+: \mbox{\hyperlink{class_this}{This}} will use a list of keys pressed this frame and activate thir related functions. Param One \+: A vector of keys pressed. \mbox{\Hypertarget{struct_input_handler_a4e77e8e4824b8287ae3a5d1af732677f}\label{struct_input_handler_a4e77e8e4824b8287ae3a5d1af732677f}} 
+\index{Input\+Handler@{Input\+Handler}!m\+\_\+\+Class\+Name@{m\+\_\+\+Class\+Name}}
+\index{m\+\_\+\+Class\+Name@{m\+\_\+\+Class\+Name}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Class\+Name()}{m\_ClassName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Input\+Handler\+::m\+\_\+\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Class\+Name \+: \mbox{\hyperlink{class_this}{This}} will beused to get the name of the class, used for the reading/writing to the config file. \mbox{\Hypertarget{struct_input_handler_ae8150d9263151be0d480a382f2c16b02}\label{struct_input_handler_ae8150d9263151be0d480a382f2c16b02}} 
+\index{Input\+Handler@{Input\+Handler}!m\+\_\+\+Load\+Config@{m\+\_\+\+Load\+Config}}
+\index{m\+\_\+\+Load\+Config@{m\+\_\+\+Load\+Config}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Load\+Config()}{m\_LoadConfig()}}
+{\footnotesize\ttfamily void Input\+Handler\+::m\+\_\+\+Load\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Load\+Config \+: \mbox{\hyperlink{class_this}{This}} will be used to read the config file for the game and adjust the key commands used. \mbox{\Hypertarget{struct_input_handler_aa133e6d963446578ab282095ca5df05a}\label{struct_input_handler_aa133e6d963446578ab282095ca5df05a}} 
+\index{Input\+Handler@{Input\+Handler}!m\+\_\+\+Output\+Config@{m\+\_\+\+Output\+Config}}
+\index{m\+\_\+\+Output\+Config@{m\+\_\+\+Output\+Config}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Output\+Config()}{m\_OutputConfig()}}
+{\footnotesize\ttfamily void Input\+Handler\+::m\+\_\+\+Output\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Output\+Config \+: \mbox{\hyperlink{class_this}{This}} will write the current key commands for the engine to a config file within assets. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_input_handler_abe853597d11b94e0668c8db6638a0548}\label{struct_input_handler_abe853597d11b94e0668c8db6638a0548}} 
+\index{Input\+Handler@{Input\+Handler}!m\+\_\+control\+Mapping@{m\+\_\+control\+Mapping}}
+\index{m\+\_\+control\+Mapping@{m\+\_\+control\+Mapping}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{m\+\_\+control\+Mapping}{m\_controlMapping}}
+{\footnotesize\ttfamily std\+::map$<$int, \mbox{\hyperlink{class_input_command}{Input\+Command}}$\ast$$>$ Input\+Handler\+::m\+\_\+control\+Mapping}
+
+\mbox{\Hypertarget{struct_input_handler_ae2a439c9a0559ac885a1322d83cfce4b}\label{struct_input_handler_ae2a439c9a0559ac885a1322d83cfce4b}} 
+\index{Input\+Handler@{Input\+Handler}!m\+\_\+\+Game\+Manager@{m\+\_\+\+Game\+Manager}}
+\index{m\+\_\+\+Game\+Manager@{m\+\_\+\+Game\+Manager}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Game\+Manager}{m\_GameManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_manager}{Game\+Manager}}$\ast$ Input\+Handler\+::m\+\_\+\+Game\+Manager}
+
+\mbox{\Hypertarget{struct_input_handler_a02162590271ed44ae87ce77e89023026}\label{struct_input_handler_a02162590271ed44ae87ce77e89023026}} 
+\index{Input\+Handler@{Input\+Handler}!m\+\_\+player\+Cube@{m\+\_\+player\+Cube}}
+\index{m\+\_\+player\+Cube@{m\+\_\+player\+Cube}!Input\+Handler@{Input\+Handler}}
+\subsubsection{\texorpdfstring{m\+\_\+player\+Cube}{m\_playerCube}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$ Input\+Handler\+::m\+\_\+player\+Cube}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_input_handler_8h}{Input\+Handler.\+h}}\end{DoxyCompactItemize}

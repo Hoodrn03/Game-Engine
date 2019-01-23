@@ -1,0 +1,47 @@
+\hypertarget{class_component}{}\section{Component Class Reference}
+\label{class_component}\index{Component@{Component}}
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+Inheritance diagram for Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.400000cm]{class_component}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_component_ab71d7f4b6d8792287a9b0c9e045acbe0}{On\+Update}} (float dt)=0
+\item 
+virtual void \mbox{\hyperlink{class_component_a1a880fe5e212cd7ef8241e220660417d}{On\+Message}} (const std\+::string m)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_component_a1a880fe5e212cd7ef8241e220660417d}\label{class_component_a1a880fe5e212cd7ef8241e220660417d}} 
+\index{Component@{Component}!On\+Message@{On\+Message}}
+\index{On\+Message@{On\+Message}!Component@{Component}}
+\subsubsection{\texorpdfstring{On\+Message()}{OnMessage()}}
+{\footnotesize\ttfamily virtual void Component\+::\+On\+Message (\begin{DoxyParamCaption}\item[{const std\+::string}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+On\+Message \+: \mbox{\hyperlink{class_this}{This}} will be use to react to a key press if required. 
+
+Implemented in \mbox{\hyperlink{class_camera_component_a1cd7e6036568be5bf45d249d8f96a596}{Camera\+Component}}, \mbox{\hyperlink{class_move_component_a27146b88beda6223ed9f4a82c47a917a}{Move\+Component}}, \mbox{\hyperlink{class_transform_component_ac250c4b7e47e639d0f8693d04c9b5051}{Transform\+Component}}, \mbox{\hyperlink{class_model_component_a48d6170e857f323839039ce54e9418e1}{Model\+Component}}, and \mbox{\hyperlink{class_colour_component_a40b859f0c124ddbe92ff1e53bdb398a0}{Colour\+Component}}.
+
+\mbox{\Hypertarget{class_component_ab71d7f4b6d8792287a9b0c9e045acbe0}\label{class_component_ab71d7f4b6d8792287a9b0c9e045acbe0}} 
+\index{Component@{Component}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Component@{Component}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void Component\+::\+On\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+On\+Update \+: \mbox{\hyperlink{class_this}{This}} will be used to call any update functions for this component. 
+
+Implemented in \mbox{\hyperlink{class_camera_component_aa0391037fd478ea1a602835ea64091ba}{Camera\+Component}}, \mbox{\hyperlink{class_transform_component_ab763f5af77fcb5eee0e725c219901fa3}{Transform\+Component}}, \mbox{\hyperlink{class_move_component_aac8549ecd0670b2b8830d43019d58ea4}{Move\+Component}}, \mbox{\hyperlink{class_model_component_a5def59776319943854fb5da3dc515051}{Model\+Component}}, and \mbox{\hyperlink{class_colour_component_ae45e91aebb680031bb1328c7c189ea15}{Colour\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_component_8h}{Component.\+h}}\end{DoxyCompactItemize}

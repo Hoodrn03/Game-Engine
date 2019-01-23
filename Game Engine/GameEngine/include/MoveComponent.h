@@ -11,7 +11,7 @@
 #include "CameraComponent.h"
 
 #define TRANSLATE_VALUE 0.01f
-#define ROTATION_VALUE 0.005f
+#define ROTATION_VALUE 0.002f
 
 /*! \class This component will be used to move the connected game object. */
 class MoveComponent : public Component
@@ -88,11 +88,11 @@ public:
 
 		if(m == "rotLeft")
 		{
-			m_ThisObject->getComponent<TransformComponent>()->yaw(ROTATION_VALUE); 
+			m_ThisObject->getComponent<TransformComponent>()->yaw(-ROTATION_VALUE); 
 		}
 		else if (m == "rotRight")
 		{
-			m_ThisObject->getComponent<TransformComponent>()->yaw(-ROTATION_VALUE);
+			m_ThisObject->getComponent<TransformComponent>()->yaw(ROTATION_VALUE);
 		}
 		
 	}

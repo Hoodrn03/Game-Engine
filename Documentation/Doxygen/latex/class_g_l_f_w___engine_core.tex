@@ -1,0 +1,106 @@
+\hypertarget{class_g_l_f_w___engine_core}{}\section{G\+L\+F\+W\+\_\+\+Engine\+Core Class Reference}
+\label{class_g_l_f_w___engine_core}\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+
+
+{\ttfamily \#include $<$G\+L\+F\+W\+\_\+\+Engine\+Core.\+h$>$}
+
+Inheritance diagram for G\+L\+F\+W\+\_\+\+Engine\+Core\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_l_f_w___engine_core}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_l_f_w___engine_core_adf17916892982f1103140b22dc1b37be}{$\sim$\+G\+L\+F\+W\+\_\+\+Engine\+Core}} () override
+\item 
+bool \mbox{\hyperlink{class_g_l_f_w___engine_core_aa786131ec64e7ee6779c3ac1ee8507ce}{init\+Window}} (int width, int height, std\+::string window\+Name) override
+\item 
+bool \mbox{\hyperlink{class_g_l_f_w___engine_core_adf9266f1a9b5d97992691224f0f20c7b}{run\+Engine}} (\mbox{\hyperlink{class_game}{Game}} \&game) override
+\item 
+void \mbox{\hyperlink{class_g_l_f_w___engine_core_a6031a54b0978d6e0fd1be3f292c2059f}{render\+Coloured\+Background}} (float r, float g, float b) override
+\item 
+void \mbox{\hyperlink{class_g_l_f_w___engine_core_a2aba4fb8a635f96fc4057ba841670a29}{set\+Camera}} (const \mbox{\hyperlink{class_camera}{Camera}} $\ast$cam) override
+\item 
+void \mbox{\hyperlink{class_g_l_f_w___engine_core_a728d1f6ffd1e8526611ab0856db537c0}{draw\+Cube}} (const glm\+::mat4 \&model\+Matrix) override
+\item 
+void \mbox{\hyperlink{class_g_l_f_w___engine_core_a51f39fe1ceea2f8c47d7c8e89118139d}{draw\+Model}} (\mbox{\hyperlink{class_model}{Model}} $\ast$model, glm\+::mat4 \&model\+Matrix) override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_l_f_w___engine_core_adf17916892982f1103140b22dc1b37be}\label{class_g_l_f_w___engine_core_adf17916892982f1103140b22dc1b37be}} 
+\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}!````~G\+L\+F\+W\+\_\+\+Engine\+Core@{$\sim$\+G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\index{````~G\+L\+F\+W\+\_\+\+Engine\+Core@{$\sim$\+G\+L\+F\+W\+\_\+\+Engine\+Core}!G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\subsubsection{\texorpdfstring{$\sim$\+G\+L\+F\+W\+\_\+\+Engine\+Core()}{~GLFW\_EngineCore()}}
+{\footnotesize\ttfamily G\+L\+F\+W\+\_\+\+Engine\+Core\+::$\sim$\+G\+L\+F\+W\+\_\+\+Engine\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_l_f_w___engine_core_a728d1f6ffd1e8526611ab0856db537c0}\label{class_g_l_f_w___engine_core_a728d1f6ffd1e8526611ab0856db537c0}} 
+\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}!draw\+Cube@{draw\+Cube}}
+\index{draw\+Cube@{draw\+Cube}!G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\subsubsection{\texorpdfstring{draw\+Cube()}{drawCube()}}
+{\footnotesize\ttfamily void G\+L\+F\+W\+\_\+\+Engine\+Core\+::draw\+Cube (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{model\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw\+Cube \+: \mbox{\hyperlink{class_this}{This}} will draw all of the objects in a given scene as a cube. Param One \+: \mbox{\hyperlink{class_the}{The}} model matrix of the object which should be drawn, (position, scale, ext.). 
+
+Implements \mbox{\hyperlink{class_i_engine_core_af24745492d6a7c8bd410a6849fbaf854}{I\+Engine\+Core}}.
+
+\mbox{\Hypertarget{class_g_l_f_w___engine_core_a51f39fe1ceea2f8c47d7c8e89118139d}\label{class_g_l_f_w___engine_core_a51f39fe1ceea2f8c47d7c8e89118139d}} 
+\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}!draw\+Model@{draw\+Model}}
+\index{draw\+Model@{draw\+Model}!G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\subsubsection{\texorpdfstring{draw\+Model()}{drawModel()}}
+{\footnotesize\ttfamily void G\+L\+F\+W\+\_\+\+Engine\+Core\+::draw\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model}{Model}} $\ast$}]{model,  }\item[{glm\+::mat4 \&}]{model\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw\+Model \+: \mbox{\hyperlink{class_this}{This}} will be used to draw the models into a scene. Param One \+: \mbox{\hyperlink{class_the}{The}} model which should be drawn. Param Two \+: \mbox{\hyperlink{class_the}{The}} model matrix for that model, (position, scale, ext.). 
+
+Implements \mbox{\hyperlink{class_i_engine_core_a454b3f14b3a567852d891c7543edfef7}{I\+Engine\+Core}}.
+
+\mbox{\Hypertarget{class_g_l_f_w___engine_core_aa786131ec64e7ee6779c3ac1ee8507ce}\label{class_g_l_f_w___engine_core_aa786131ec64e7ee6779c3ac1ee8507ce}} 
+\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}!init\+Window@{init\+Window}}
+\index{init\+Window@{init\+Window}!G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\subsubsection{\texorpdfstring{init\+Window()}{initWindow()}}
+{\footnotesize\ttfamily bool G\+L\+F\+W\+\_\+\+Engine\+Core\+::init\+Window (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{std\+::string}]{window\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Init\+Window \+: \mbox{\hyperlink{class_this}{This}} will be used to create a window for the game. Param One \+: \mbox{\hyperlink{class_the}{The}} Width of the game window. Param Two \+: \mbox{\hyperlink{class_the}{The}} Height of the game window. Param Three \+: \mbox{\hyperlink{class_the}{The}} Name of the game window. 
+
+Implements \mbox{\hyperlink{class_i_engine_core_a27123704f8f24eefd9cb47aa9986cbf3}{I\+Engine\+Core}}.
+
+\mbox{\Hypertarget{class_g_l_f_w___engine_core_a6031a54b0978d6e0fd1be3f292c2059f}\label{class_g_l_f_w___engine_core_a6031a54b0978d6e0fd1be3f292c2059f}} 
+\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}!render\+Coloured\+Background@{render\+Coloured\+Background}}
+\index{render\+Coloured\+Background@{render\+Coloured\+Background}!G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\subsubsection{\texorpdfstring{render\+Coloured\+Background()}{renderColouredBackground()}}
+{\footnotesize\ttfamily void G\+L\+F\+W\+\_\+\+Engine\+Core\+::render\+Coloured\+Background (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Render\+Coloured\+Background \+: \mbox{\hyperlink{class_this}{This}} will be used to display a colourd background within the game. Param One \+: \mbox{\hyperlink{class_the}{The}} Red value. Param Two \+: \mbox{\hyperlink{class_the}{The}} Green value. Param Three \+: \mbox{\hyperlink{class_the}{The}} Blue value. 
+
+Implements \mbox{\hyperlink{class_i_engine_core_a8f8e0778f04c50b680cdde167cb38e2f}{I\+Engine\+Core}}.
+
+\mbox{\Hypertarget{class_g_l_f_w___engine_core_adf9266f1a9b5d97992691224f0f20c7b}\label{class_g_l_f_w___engine_core_adf9266f1a9b5d97992691224f0f20c7b}} 
+\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}!run\+Engine@{run\+Engine}}
+\index{run\+Engine@{run\+Engine}!G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\subsubsection{\texorpdfstring{run\+Engine()}{runEngine()}}
+{\footnotesize\ttfamily bool G\+L\+F\+W\+\_\+\+Engine\+Core\+::run\+Engine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game}{Game}} \&}]{game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Run\+Engine \+: \mbox{\hyperlink{class_this}{This}} will be used to operate the game loop with the engine core. Param One \+: \mbox{\hyperlink{class_the}{The}} game loop to run. 
+
+Implements \mbox{\hyperlink{class_i_engine_core_ad03940f571ec20ba7427feeca44ace21}{I\+Engine\+Core}}.
+
+\mbox{\Hypertarget{class_g_l_f_w___engine_core_a2aba4fb8a635f96fc4057ba841670a29}\label{class_g_l_f_w___engine_core_a2aba4fb8a635f96fc4057ba841670a29}} 
+\index{G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}!set\+Camera@{set\+Camera}}
+\index{set\+Camera@{set\+Camera}!G\+L\+F\+W\+\_\+\+Engine\+Core@{G\+L\+F\+W\+\_\+\+Engine\+Core}}
+\subsubsection{\texorpdfstring{set\+Camera()}{setCamera()}}
+{\footnotesize\ttfamily void G\+L\+F\+W\+\_\+\+Engine\+Core\+::set\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{cam }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set\+Camera \+: \mbox{\hyperlink{class_this}{This}} will be used to set the camera which will be used to display the scene. Param One \+: \mbox{\hyperlink{class_the}{The}} camera which will be used for the game engine. 
+
+Implements \mbox{\hyperlink{class_i_engine_core_ab2f643ce25708c87b20eecdcbb18b9ac}{I\+Engine\+Core}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_g_l_f_w___engine_core_8h}{G\+L\+F\+W\+\_\+\+Engine\+Core.\+h}}\end{DoxyCompactItemize}

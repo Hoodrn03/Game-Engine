@@ -1,0 +1,47 @@
+\hypertarget{class_model}{}\section{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+
+
+{\ttfamily \#include $<$Model.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_a4a90abd11a1c4e47f1b704e28e147dfb}{Model}} (string filepath)
+\item 
+void \mbox{\hyperlink{class_model_a0885da76930d0f3b919eaa10ae08e8ab}{render}} (const unsigned int shader\+Program)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{class_model_a16c263d87f6368d21d5ab255468c2c90}{Texture\+From\+File}} (const char $\ast$filepath, const string \&directory, bool gamma=false)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_a4a90abd11a1c4e47f1b704e28e147dfb}\label{class_model_a4a90abd11a1c4e47f1b704e28e147dfb}} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}\item[{string}]{filepath }\end{DoxyParamCaption})}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} file path to find the model. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_a0885da76930d0f3b919eaa10ae08e8ab}\label{class_model_a0885da76930d0f3b919eaa10ae08e8ab}} 
+\index{Model@{Model}!render@{render}}
+\index{render@{render}!Model@{Model}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Model\+::render (\begin{DoxyParamCaption}\item[{const unsigned int}]{shader\+Program }\end{DoxyParamCaption})}
+
+Render \+: \mbox{\hyperlink{class_this}{This}} will be usesd to render the model in the scene. Param One \+: \mbox{\hyperlink{class_the}{The}} current shader program used by the game engine. \mbox{\Hypertarget{class_model_a16c263d87f6368d21d5ab255468c2c90}\label{class_model_a16c263d87f6368d21d5ab255468c2c90}} 
+\index{Model@{Model}!Texture\+From\+File@{Texture\+From\+File}}
+\index{Texture\+From\+File@{Texture\+From\+File}!Model@{Model}}
+\subsubsection{\texorpdfstring{Texture\+From\+File()}{TextureFromFile()}}
+{\footnotesize\ttfamily static unsigned int Model\+::\+Texture\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filepath,  }\item[{const string \&}]{directory,  }\item[{bool}]{gamma = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Texture\+From\+File \+: \mbox{\hyperlink{class_this}{This}} will be used to load a model\textquotesingle{}s texture from a file. Param One \+: \mbox{\hyperlink{class_the}{The}} name of the file. Param Two \+: \mbox{\hyperlink{class_the}{The}} location where to find the file. Param Three \+: \mbox{\hyperlink{class_the}{The}} gamma in the texture. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_model_8h}{Model.\+h}}\end{DoxyCompactItemize}

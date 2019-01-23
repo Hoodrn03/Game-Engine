@@ -1,0 +1,57 @@
+\hypertarget{class_game_object}{}\section{Game\+Object Class Reference}
+\label{class_game_object}\index{Game\+Object@{Game\+Object}}
+
+
+{\ttfamily \#include $<$Game\+Object.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_object_a3fcc5b3f446a2f8fe7c2943db2714750}{m\+\_\+\+Update}} (float dt)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{class_game_object_a1c50376c7f24439359a3962f57dfd513}{get\+Component}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_game_object_aff400b6c6e3c6af0b42fe49adb786174}{add\+Component}} (T $\ast$comp)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_a31bee32d6133a448517e33704be97047}{m\+\_\+id}} = \char`\"{}Null\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_object_aff400b6c6e3c6af0b42fe49adb786174}\label{class_game_object_aff400b6c6e3c6af0b42fe49adb786174}} 
+\index{Game\+Object@{Game\+Object}!add\+Component@{add\+Component}}
+\index{add\+Component@{add\+Component}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{add\+Component()}{addComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Game\+Object\+::add\+Component (\begin{DoxyParamCaption}\item[{T $\ast$}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{class_this}{This}} will be used to add a new component onto this game object; where type T is the component to add. \mbox{\Hypertarget{class_game_object_a1c50376c7f24439359a3962f57dfd513}\label{class_game_object_a1c50376c7f24439359a3962f57dfd513}} 
+\index{Game\+Object@{Game\+Object}!get\+Component@{get\+Component}}
+\index{get\+Component@{get\+Component}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{get\+Component()}{getComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ Game\+Object\+::get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{class_this}{This}} will be used to get another componet which may be attatched to the game object; where type T is the component to find. \mbox{\Hypertarget{class_game_object_a3fcc5b3f446a2f8fe7c2943db2714750}\label{class_game_object_a3fcc5b3f446a2f8fe7c2943db2714750}} 
+\index{Game\+Object@{Game\+Object}!m\+\_\+\+Update@{m\+\_\+\+Update}}
+\index{m\+\_\+\+Update@{m\+\_\+\+Update}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Update()}{m\_Update()}}
+{\footnotesize\ttfamily void Game\+Object\+::m\+\_\+\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Update \+: \mbox{\hyperlink{class_this}{This}} will be used to call all of the update functions for all of the connected components. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_object_a31bee32d6133a448517e33704be97047}\label{class_game_object_a31bee32d6133a448517e33704be97047}} 
+\index{Game\+Object@{Game\+Object}!m\+\_\+id@{m\+\_\+id}}
+\index{m\+\_\+id@{m\+\_\+id}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{m\+\_\+id}{m\_id}}
+{\footnotesize\ttfamily std\+::string Game\+Object\+::m\+\_\+id = \char`\"{}Null\char`\"{}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_game_object_8h}{Game\+Object.\+h}}\end{DoxyCompactItemize}

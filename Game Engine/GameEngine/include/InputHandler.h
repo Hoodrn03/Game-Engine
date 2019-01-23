@@ -33,6 +33,10 @@ public:
 	*/
 	virtual void execute(GameObject& playerBackground) = 0;
 
+	//-----------------------------------------------------------//
+	/*! ClassName : This will be used to help load and output this action. 
+	*
+	*/
 	virtual const char* m_ClassName() = 0;
 };
 
@@ -208,21 +212,6 @@ struct InputHandler
 	std::map<int, InputCommand*> m_controlMapping;
 
 	//-----------------------------------------------------------//
-	/*! Constructor 
-	*Param One : A pointer to the player object. 
-	*/
-	InputHandler(GameObject* playerCube) : m_playerCube(playerCube)
-	{
-		// the idea will be to map the keys directly from a config file that can be loaded in
-		// and changed on the fly
-		
-		m_controlMapping[87] = new MoveForward; 
-		m_controlMapping[83] = new MoveBackward; 
-		m_controlMapping[65] = new MoveLeft;
-		m_controlMapping[68] = new MoveRight; 
-	}
-
-	//-----------------------------------------------------------//
 	/*! Constructor
 	*Param One : A pointer to the player object.
 	*/
@@ -266,6 +255,8 @@ struct InputHandler
 				std::string l_ActionClass; 
 
 				l_ss >> l_InputKey; 
+
+				std::cout << l_InputKey << std::endl;
 
 				l_ss >> l_ActionClass;
 

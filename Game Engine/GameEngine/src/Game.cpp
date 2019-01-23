@@ -95,7 +95,7 @@ void Game::m_Render()
 	// Render the current scene. 
 	m_GameRenderer.m_Render(*&m_CurrentScene->m_GetGameObjects(), m_engineInterfacePtr);
 
-	m_GameRenderer.m_Render(m_GameManager.m_GetPlayerObject(), m_engineInterfacePtr);
+	m_GameRenderer.m_Render(m_GameManager.m_GetGameObjects(), m_engineInterfacePtr);
 
 
 }

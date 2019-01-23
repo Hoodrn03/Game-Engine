@@ -1,0 +1,68 @@
+\hypertarget{class_scene}{}\section{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_a2d8d697e4b432199f7c663e51ea1a62d}{Scene}} (std\+::string level\+File)
+\item 
+\mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_scene_a2d84a7dbabaf8b0dd135d754200cb126}{m\+\_\+\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_scene_a09f503e90af9f19de0f461b827425ccb}{m\+\_\+\+Render}} (\mbox{\hyperlink{class_i_engine_core}{I\+Engine\+Core}} $\ast$engine\+Interface)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_scene_a183135dcbd5fa1c27da8246d9a185397}{m\+\_\+\+Get\+Game\+Objects}} ()
+\item 
+bool \mbox{\hyperlink{class_scene_ab44df8bc0f251a99a35b1c876cb02b46}{m\+\_\+\+Load\+Level\+Json}} (std\+::string level\+File)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_scene_a2d8d697e4b432199f7c663e51ea1a62d}\label{class_scene_a2d8d697e4b432199f7c663e51ea1a62d}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{level\+File }\end{DoxyParamCaption})}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} location for the level, to load. \mbox{\Hypertarget{class_scene_a3b8cec2e32546713915f8c6303c951f1}\label{class_scene_a3b8cec2e32546713915f8c6303c951f1}} 
+\index{Scene@{Scene}!````~Scene@{$\sim$\+Scene}}
+\index{````~Scene@{$\sim$\+Scene}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{$\sim$\+Scene()}{~Scene()}}
+{\footnotesize\ttfamily Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deconstructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_a183135dcbd5fa1c27da8246d9a185397}\label{class_scene_a183135dcbd5fa1c27da8246d9a185397}} 
+\index{Scene@{Scene}!m\+\_\+\+Get\+Game\+Objects@{m\+\_\+\+Get\+Game\+Objects}}
+\index{m\+\_\+\+Get\+Game\+Objects@{m\+\_\+\+Get\+Game\+Objects}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Get\+Game\+Objects()}{m\_GetGameObjects()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$>$ Scene\+::m\+\_\+\+Get\+Game\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get\+Game\+Objects \+: \mbox{\hyperlink{class_used}{Used}} to get the list of game object currently in the scene. \mbox{\Hypertarget{class_scene_ab44df8bc0f251a99a35b1c876cb02b46}\label{class_scene_ab44df8bc0f251a99a35b1c876cb02b46}} 
+\index{Scene@{Scene}!m\+\_\+\+Load\+Level\+Json@{m\+\_\+\+Load\+Level\+Json}}
+\index{m\+\_\+\+Load\+Level\+Json@{m\+\_\+\+Load\+Level\+Json}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Load\+Level\+Json()}{m\_LoadLevelJson()}}
+{\footnotesize\ttfamily bool Scene\+::m\+\_\+\+Load\+Level\+Json (\begin{DoxyParamCaption}\item[{std\+::string}]{level\+File }\end{DoxyParamCaption})}
+
+Load\+Level\+Json \+: \mbox{\hyperlink{class_this}{This}} will load the game scene from a json file. \mbox{\Hypertarget{class_scene_a09f503e90af9f19de0f461b827425ccb}\label{class_scene_a09f503e90af9f19de0f461b827425ccb}} 
+\index{Scene@{Scene}!m\+\_\+\+Render@{m\+\_\+\+Render}}
+\index{m\+\_\+\+Render@{m\+\_\+\+Render}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Render()}{m\_Render()}}
+{\footnotesize\ttfamily void Scene\+::m\+\_\+\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_engine_core}{I\+Engine\+Core}} $\ast$}]{engine\+Interface }\end{DoxyParamCaption})}
+
+Render \+: \mbox{\hyperlink{class_used}{Used}} to render the current scene. Param One \+: \mbox{\hyperlink{class_the}{The}} current engine core being used. \mbox{\Hypertarget{class_scene_a2d84a7dbabaf8b0dd135d754200cb126}\label{class_scene_a2d84a7dbabaf8b0dd135d754200cb126}} 
+\index{Scene@{Scene}!m\+\_\+\+Update@{m\+\_\+\+Update}}
+\index{m\+\_\+\+Update@{m\+\_\+\+Update}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Update()}{m\_Update()}}
+{\footnotesize\ttfamily void Scene\+::m\+\_\+\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update \+: \mbox{\hyperlink{class_used}{Used}} to update the current scene. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_scene_8h}{Scene.\+h}}\end{DoxyCompactItemize}

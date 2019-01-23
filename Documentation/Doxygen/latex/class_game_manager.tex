@@ -1,0 +1,101 @@
+\hypertarget{class_game_manager}{}\section{Game\+Manager Class Reference}
+\label{class_game_manager}\index{Game\+Manager@{Game\+Manager}}
+
+
+{\ttfamily \#include $<$Game\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}{Game\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_game_manager_aaae63e38e358379c1fe507c5197a8435}{$\sim$\+Game\+Manager}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_game_manager_a6b5f37f418867bd5207c6cf126113f4a}{m\+\_\+\+Get\+Game\+Objects}} ()
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ \mbox{\hyperlink{class_game_manager_a979b7881772a956be7cab1d05f00044e}{m\+\_\+\+Get\+Game\+Object}} (int identifier)
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ \mbox{\hyperlink{class_game_manager_ae80a0230548e9d9d5622c814b29ce55c}{m\+\_\+\+Get\+Game\+Object}} (std\+::string identifier)
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ \mbox{\hyperlink{class_game_manager_a8d4801d6a53e94e2b6bea50fe8767140}{m\+\_\+\+Get\+Player\+Object}} ()
+\item 
+\mbox{\hyperlink{class_camera}{Camera}} $\ast$ \mbox{\hyperlink{class_game_manager_a70317e94178313c28a101430c3aeaa2a}{m\+\_\+\+Get\+Camera}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_ab81eadbd42345b53241d33f584ca5ac5}{m\+\_\+\+Update}} (float dt)
+\item 
+void \mbox{\hyperlink{class_game_manager_a53dfb2a166bbe26b9f5191973d40938e}{Rotate\+With\+Mouse}} (float moveX, float moveY)
+\item 
+void \mbox{\hyperlink{class_game_manager_a883605b361a964bf45c91ff6fe935b5c}{m\+\_\+\+On\+Message}} (std\+::string m)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}\label{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}} 
+\index{Game\+Manager@{Game\+Manager}!Game\+Manager@{Game\+Manager}}
+\index{Game\+Manager@{Game\+Manager}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Game\+Manager()}{GameManager()}}
+{\footnotesize\ttfamily Game\+Manager\+::\+Game\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \mbox{\Hypertarget{class_game_manager_aaae63e38e358379c1fe507c5197a8435}\label{class_game_manager_aaae63e38e358379c1fe507c5197a8435}} 
+\index{Game\+Manager@{Game\+Manager}!````~Game\+Manager@{$\sim$\+Game\+Manager}}
+\index{````~Game\+Manager@{$\sim$\+Game\+Manager}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Game\+Manager()}{~GameManager()}}
+{\footnotesize\ttfamily Game\+Manager\+::$\sim$\+Game\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Deconstructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_manager_a70317e94178313c28a101430c3aeaa2a}\label{class_game_manager_a70317e94178313c28a101430c3aeaa2a}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+\+Get\+Camera@{m\+\_\+\+Get\+Camera}}
+\index{m\+\_\+\+Get\+Camera@{m\+\_\+\+Get\+Camera}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Get\+Camera()}{m\_GetCamera()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}}$\ast$ Game\+Manager\+::m\+\_\+\+Get\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get\+Camera \+: \mbox{\hyperlink{class_this}{This}} will look for a camera object within the vector and return the attached camera. \mbox{\Hypertarget{class_game_manager_a979b7881772a956be7cab1d05f00044e}\label{class_game_manager_a979b7881772a956be7cab1d05f00044e}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+\+Get\+Game\+Object@{m\+\_\+\+Get\+Game\+Object}}
+\index{m\+\_\+\+Get\+Game\+Object@{m\+\_\+\+Get\+Game\+Object}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Get\+Game\+Object()}{m\_GetGameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$ Game\+Manager\+::m\+\_\+\+Get\+Game\+Object (\begin{DoxyParamCaption}\item[{int}]{identifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get\+Game\+Object \+: \mbox{\hyperlink{class_this}{This}} will be used to get a specific game object. ~\newline
+Param One \+: \mbox{\hyperlink{class_the}{The}} position within the vector for the object. \mbox{\Hypertarget{class_game_manager_ae80a0230548e9d9d5622c814b29ce55c}\label{class_game_manager_ae80a0230548e9d9d5622c814b29ce55c}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+\+Get\+Game\+Object@{m\+\_\+\+Get\+Game\+Object}}
+\index{m\+\_\+\+Get\+Game\+Object@{m\+\_\+\+Get\+Game\+Object}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Get\+Game\+Object()}{m\_GetGameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$ Game\+Manager\+::m\+\_\+\+Get\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{identifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get\+Game\+Object \+: \mbox{\hyperlink{class_this}{This}} will be used to get a specific game object. Param One \+: \mbox{\hyperlink{class_the}{The}} name givdn to a specific game object. \mbox{\Hypertarget{class_game_manager_a6b5f37f418867bd5207c6cf126113f4a}\label{class_game_manager_a6b5f37f418867bd5207c6cf126113f4a}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+\+Get\+Game\+Objects@{m\+\_\+\+Get\+Game\+Objects}}
+\index{m\+\_\+\+Get\+Game\+Objects@{m\+\_\+\+Get\+Game\+Objects}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Get\+Game\+Objects()}{m\_GetGameObjects()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$$>$ Game\+Manager\+::m\+\_\+\+Get\+Game\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get\+Game\+Objects \+: \mbox{\hyperlink{class_this}{This}} will be used to get the vector of game objects. \mbox{\Hypertarget{class_game_manager_a8d4801d6a53e94e2b6bea50fe8767140}\label{class_game_manager_a8d4801d6a53e94e2b6bea50fe8767140}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+\+Get\+Player\+Object@{m\+\_\+\+Get\+Player\+Object}}
+\index{m\+\_\+\+Get\+Player\+Object@{m\+\_\+\+Get\+Player\+Object}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Get\+Player\+Object()}{m\_GetPlayerObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$ Game\+Manager\+::m\+\_\+\+Get\+Player\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get\+Player\+Object \+: \mbox{\hyperlink{class_this}{This}} will search the vector for an object with the tag Player, \mbox{\Hypertarget{class_game_manager_a883605b361a964bf45c91ff6fe935b5c}\label{class_game_manager_a883605b361a964bf45c91ff6fe935b5c}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+\+On\+Message@{m\+\_\+\+On\+Message}}
+\index{m\+\_\+\+On\+Message@{m\+\_\+\+On\+Message}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+On\+Message()}{m\_OnMessage()}}
+{\footnotesize\ttfamily void Game\+Manager\+::m\+\_\+\+On\+Message (\begin{DoxyParamCaption}\item[{std\+::string}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+On\+Message \+: \mbox{\hyperlink{class_this}{This}} will be use to pass messages to specific objects. \mbox{\Hypertarget{class_game_manager_ab81eadbd42345b53241d33f584ca5ac5}\label{class_game_manager_ab81eadbd42345b53241d33f584ca5ac5}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+\+Update@{m\+\_\+\+Update}}
+\index{m\+\_\+\+Update@{m\+\_\+\+Update}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Update()}{m\_Update()}}
+{\footnotesize\ttfamily void Game\+Manager\+::m\+\_\+\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Update \+: \mbox{\hyperlink{class_this}{This}} will be used to update all of the game objects. Param One \+: \mbox{\hyperlink{class_the}{The}} change in time from last frame. \mbox{\Hypertarget{class_game_manager_a53dfb2a166bbe26b9f5191973d40938e}\label{class_game_manager_a53dfb2a166bbe26b9f5191973d40938e}} 
+\index{Game\+Manager@{Game\+Manager}!Rotate\+With\+Mouse@{Rotate\+With\+Mouse}}
+\index{Rotate\+With\+Mouse@{Rotate\+With\+Mouse}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Rotate\+With\+Mouse()}{RotateWithMouse()}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Rotate\+With\+Mouse (\begin{DoxyParamCaption}\item[{float}]{moveX,  }\item[{float}]{moveY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Rotate\+With\+Mouse \+: \mbox{\hyperlink{class_used}{Used}} to update the rotation of key game objects. Param One \+: \mbox{\hyperlink{class_the}{The}} direction of the mouse in the X axis Param Two \+: \mbox{\hyperlink{class_the}{The}} direction of the mouse in the Y axis 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_game_manager_8h}{Game\+Manager.\+h}}\end{DoxyCompactItemize}

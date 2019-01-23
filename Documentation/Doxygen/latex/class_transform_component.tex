@@ -1,0 +1,222 @@
+\hypertarget{class_transform_component}{}\section{Transform\+Component Class Reference}
+\label{class_transform_component}\index{Transform\+Component@{Transform\+Component}}
+
+
+{\ttfamily \#include $<$Transform\+Component.\+h$>$}
+
+Inheritance diagram for Transform\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_transform_component}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transform_component_ace1cf2d7d2a7468e9cb3eb0ce382f446}{Transform\+Component}} ()
+\item 
+\mbox{\hyperlink{class_transform_component_a01037615eda19c3bbb51c99094839574}{Transform\+Component}} (const glm\+::vec3 \&pos)
+\item 
+\mbox{\hyperlink{class_transform_component_a05ce9d2b5a350a5d8d67ce6b323818d4}{Transform\+Component}} (const glm\+::vec3 \&pos, const glm\+::quat \&orient)
+\item 
+\mbox{\hyperlink{class_transform_component_aa823162adc73870484409dcdb8cc95f3}{Transform\+Component}} (const glm\+::vec3 \&pos, const glm\+::quat \&orient, const glm\+::vec3 \&\mbox{\hyperlink{class_transform_component_a4b04c6a025c6be6bd0b9400827ee2291}{scale}})
+\item 
+void \mbox{\hyperlink{class_transform_component_ab763f5af77fcb5eee0e725c219901fa3}{On\+Update}} (float dt) override
+\item 
+void \mbox{\hyperlink{class_transform_component_ac250c4b7e47e639d0f8693d04c9b5051}{On\+Message}} (const std\+::string m) override
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_transform_component_a1f236ca0fb57ccb2a5e1238502a880ac}{position}} () const
+\item 
+const glm\+::quat \& \mbox{\hyperlink{class_transform_component_a7655d65aee0cb5dc459e8f632c80a6d1}{orientation}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_transform_component_a4b04c6a025c6be6bd0b9400827ee2291}{scale}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_transform_component_a5fc531fdaba497dfb2013edce34cb094}{get\+Model\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_transform_component_af6ff15b431e0959b26714037f4b5e5e9}{translate}} (const glm\+::vec3 \&v)
+\item 
+void \mbox{\hyperlink{class_transform_component_af495b5a63ba61ac9f67170ecf30769ac}{translate}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_transform_component_a54f3f0e7924028bb32279aac3938a149}{rotate}} (float angle, const glm\+::vec3 \&axis)
+\item 
+void \mbox{\hyperlink{class_transform_component_a7c97e7f1e9924b811319acb73accde72}{rotate}} (float angle, float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_transform_component_a45483b2f5f38819ad0db6fcfe0f0ded8}{scale\+Up}} (const glm\+::vec3 \&v)
+\item 
+void \mbox{\hyperlink{class_transform_component_a161374892f674b2e6d34bcaeb66a2a28}{scale\+Up}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_transform_component_ae32c6f3f18b81fc712629fb689d61252}{yaw}} (float angle)
+\item 
+void \mbox{\hyperlink{class_transform_component_ad363ec339461bde470fcc50103d12ba7}{pitch}} (float angle)
+\item 
+void \mbox{\hyperlink{class_transform_component_ae38356794f70a3838b7c690d3bb0bef7}{roll}} (float angle)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::quat \mbox{\hyperlink{class_transform_component_a70f27f66f621e0e52e96e40ec168ede2}{m\+\_\+orientation}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_component_a5a441b52ff5f18d940e3351e35868481}{m\+\_\+position}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_component_a50d168d6290b29a66b21ce576fa44d59}{m\+\_\+scale}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\textbackslash{} class \mbox{\hyperlink{class_this}{This}} component will allow for a game object to be positioned within the game world. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_transform_component_ace1cf2d7d2a7468e9cb3eb0ce382f446}\label{class_transform_component_ace1cf2d7d2a7468e9cb3eb0ce382f446}} 
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{Transform\+Component()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \mbox{\Hypertarget{class_transform_component_a01037615eda19c3bbb51c99094839574}\label{class_transform_component_a01037615eda19c3bbb51c99094839574}} 
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{Transform\+Component()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} position in world space for the connected game object. \mbox{\Hypertarget{class_transform_component_a05ce9d2b5a350a5d8d67ce6b323818d4}\label{class_transform_component_a05ce9d2b5a350a5d8d67ce6b323818d4}} 
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{Transform\+Component()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{pos,  }\item[{const glm\+::quat \&}]{orient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} position in world space for the connected game object. Param Two \+: \mbox{\hyperlink{class_the}{The}} direction the game object is facing. \mbox{\Hypertarget{class_transform_component_aa823162adc73870484409dcdb8cc95f3}\label{class_transform_component_aa823162adc73870484409dcdb8cc95f3}} 
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\index{Transform\+Component@{Transform\+Component}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{Transform\+Component()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{pos,  }\item[{const glm\+::quat \&}]{orient,  }\item[{const glm\+::vec3 \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Param One \+: \mbox{\hyperlink{class_the}{The}} position in world space for the connected game object. Param Two \+: \mbox{\hyperlink{class_the}{The}} direction the game object is facing. Param Three \+: \mbox{\hyperlink{class_the}{The}} scaled size of the game object. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transform_component_a5fc531fdaba497dfb2013edce34cb094}\label{class_transform_component_a5fc531fdaba497dfb2013edce34cb094}} 
+\index{Transform\+Component@{Transform\+Component}!get\+Model\+Matrix@{get\+Model\+Matrix}}
+\index{get\+Model\+Matrix@{get\+Model\+Matrix}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{get\+Model\+Matrix()}{getModelMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Transform\+Component\+::get\+Model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get\+Model\+Matrix \+: \mbox{\hyperlink{class_this}{This}} will use the current transform data to form a complete model matrix allowing for the game object to be drawn. \mbox{\Hypertarget{class_transform_component_ac250c4b7e47e639d0f8693d04c9b5051}\label{class_transform_component_ac250c4b7e47e639d0f8693d04c9b5051}} 
+\index{Transform\+Component@{Transform\+Component}!On\+Message@{On\+Message}}
+\index{On\+Message@{On\+Message}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{On\+Message()}{OnMessage()}}
+{\footnotesize\ttfamily void Transform\+Component\+::\+On\+Message (\begin{DoxyParamCaption}\item[{const std\+::string}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+On\+Message \+: \mbox{\hyperlink{class_this}{This}} will allow for the component to respond to a key press. 
+
+Implements \mbox{\hyperlink{class_component_a1a880fe5e212cd7ef8241e220660417d}{Component}}.
+
+\mbox{\Hypertarget{class_transform_component_ab763f5af77fcb5eee0e725c219901fa3}\label{class_transform_component_ab763f5af77fcb5eee0e725c219901fa3}} 
+\index{Transform\+Component@{Transform\+Component}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily void Transform\+Component\+::\+On\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+On\+Update \+: \mbox{\hyperlink{class_this}{This}} will be used to update this component. 
+
+Implements \mbox{\hyperlink{class_component_ab71d7f4b6d8792287a9b0c9e045acbe0}{Component}}.
+
+\mbox{\Hypertarget{class_transform_component_a7655d65aee0cb5dc459e8f632c80a6d1}\label{class_transform_component_a7655d65aee0cb5dc459e8f632c80a6d1}} 
+\index{Transform\+Component@{Transform\+Component}!orientation@{orientation}}
+\index{orientation@{orientation}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{orientation()}{orientation()}}
+{\footnotesize\ttfamily const glm\+::quat\& Transform\+Component\+::orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Orientation \+: \mbox{\hyperlink{class_this}{This}} will return the current direction the game object is facing. \mbox{\Hypertarget{class_transform_component_ad363ec339461bde470fcc50103d12ba7}\label{class_transform_component_ad363ec339461bde470fcc50103d12ba7}} 
+\index{Transform\+Component@{Transform\+Component}!pitch@{pitch}}
+\index{pitch@{pitch}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{pitch()}{pitch()}}
+{\footnotesize\ttfamily void Transform\+Component\+::pitch (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pitch \+: \mbox{\hyperlink{class_this}{This}} will rotate the game object by the angle around the Y-\/\+Axis. Param One \+: \mbox{\hyperlink{class_the}{The}} angle of which to rotate by. \mbox{\Hypertarget{class_transform_component_a1f236ca0fb57ccb2a5e1238502a880ac}\label{class_transform_component_a1f236ca0fb57ccb2a5e1238502a880ac}} 
+\index{Transform\+Component@{Transform\+Component}!position@{position}}
+\index{position@{position}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily const glm\+::vec3\& Transform\+Component\+::position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Position \+: \mbox{\hyperlink{class_this}{This}} will be used to return the value of position. \mbox{\Hypertarget{class_transform_component_ae38356794f70a3838b7c690d3bb0bef7}\label{class_transform_component_ae38356794f70a3838b7c690d3bb0bef7}} 
+\index{Transform\+Component@{Transform\+Component}!roll@{roll}}
+\index{roll@{roll}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{roll()}{roll()}}
+{\footnotesize\ttfamily void Transform\+Component\+::roll (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Roll \+: \mbox{\hyperlink{class_this}{This}} will rotate the game object by the angle around the X-\/\+Axis. Param One \+: \mbox{\hyperlink{class_the}{The}} angle of which to rotate by. \mbox{\Hypertarget{class_transform_component_a54f3f0e7924028bb32279aac3938a149}\label{class_transform_component_a54f3f0e7924028bb32279aac3938a149}} 
+\index{Transform\+Component@{Transform\+Component}!rotate@{rotate}}
+\index{rotate@{rotate}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Transform\+Component\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{const glm\+::vec3 \&}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Rotate \+: \mbox{\hyperlink{class_this}{This}} will rotate the game object around a single axis. Param One \+: \mbox{\hyperlink{class_the}{The}} angle of whic to rotate by. Param Two \+: \mbox{\hyperlink{class_the}{The}} fixed axix to rotate the object around. \mbox{\Hypertarget{class_transform_component_a7c97e7f1e9924b811319acb73accde72}\label{class_transform_component_a7c97e7f1e9924b811319acb73accde72}} 
+\index{Transform\+Component@{Transform\+Component}!rotate@{rotate}}
+\index{rotate@{rotate}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Transform\+Component\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Rotate \+: \mbox{\hyperlink{class_this}{This}} will rotate the game object around a single axis. Param One \+: \mbox{\hyperlink{class_the}{The}} angle of whic to rotate by. Param Two \+: \mbox{\hyperlink{class_the}{The}} X for the fixed axix to rotate the object around. Param Three \+: \+: \mbox{\hyperlink{class_the}{The}} Y for the fixed axix to rotate the object around. Param Four \+: \mbox{\hyperlink{class_the}{The}} Z for the fixed axix to rotate the object around. \mbox{\Hypertarget{class_transform_component_a4b04c6a025c6be6bd0b9400827ee2291}\label{class_transform_component_a4b04c6a025c6be6bd0b9400827ee2291}} 
+\index{Transform\+Component@{Transform\+Component}!scale@{scale}}
+\index{scale@{scale}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily const glm\+::vec3\& Transform\+Component\+::scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scale \+: \mbox{\hyperlink{class_this}{This}} will return the current scale factor for the game object. \mbox{\Hypertarget{class_transform_component_a45483b2f5f38819ad0db6fcfe0f0ded8}\label{class_transform_component_a45483b2f5f38819ad0db6fcfe0f0ded8}} 
+\index{Transform\+Component@{Transform\+Component}!scale\+Up@{scale\+Up}}
+\index{scale\+Up@{scale\+Up}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{scale\+Up()}{scaleUp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Transform\+Component\+::scale\+Up (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scale\+Up \+: \mbox{\hyperlink{class_this}{This}} will increate the scale of the game object by \textquotesingle{}v\textquotesingle{}. Param One \+: A set of value of which to scale the object by. \mbox{\Hypertarget{class_transform_component_a161374892f674b2e6d34bcaeb66a2a28}\label{class_transform_component_a161374892f674b2e6d34bcaeb66a2a28}} 
+\index{Transform\+Component@{Transform\+Component}!scale\+Up@{scale\+Up}}
+\index{scale\+Up@{scale\+Up}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{scale\+Up()}{scaleUp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Transform\+Component\+::scale\+Up (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scale\+Up \+: \mbox{\hyperlink{class_this}{This}} will increate the scale of the game object by \textquotesingle{}v\textquotesingle{}. Param One \+: \mbox{\hyperlink{class_the}{The}} value of which to scale the object in the X axis. Param Two \+: \mbox{\hyperlink{class_the}{The}} value of which to scale the object in the Y axis. Param Three \+: \mbox{\hyperlink{class_the}{The}} value of which to scale the object in the Z axis. \mbox{\Hypertarget{class_transform_component_af6ff15b431e0959b26714037f4b5e5e9}\label{class_transform_component_af6ff15b431e0959b26714037f4b5e5e9}} 
+\index{Transform\+Component@{Transform\+Component}!translate@{translate}}
+\index{translate@{translate}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Transform\+Component\+::translate (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Translate \+: \mbox{\hyperlink{class_this}{This}} will move the connected game object by the value of \textquotesingle{}v\textquotesingle{} Param One \+: a set of coordinate of which to move the object by. \mbox{\Hypertarget{class_transform_component_af495b5a63ba61ac9f67170ecf30769ac}\label{class_transform_component_af495b5a63ba61ac9f67170ecf30769ac}} 
+\index{Transform\+Component@{Transform\+Component}!translate@{translate}}
+\index{translate@{translate}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Transform\+Component\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Translate \+: \mbox{\hyperlink{class_this}{This}} will move the game objtect by an x, y, z vlaue. Param One \+: \mbox{\hyperlink{class_the}{The}} X value to move. Param Two \+: \mbox{\hyperlink{class_the}{The}} Y vlaue to move. Param Three \+: \mbox{\hyperlink{class_the}{The}} Z value to move. \mbox{\Hypertarget{class_transform_component_ae32c6f3f18b81fc712629fb689d61252}\label{class_transform_component_ae32c6f3f18b81fc712629fb689d61252}} 
+\index{Transform\+Component@{Transform\+Component}!yaw@{yaw}}
+\index{yaw@{yaw}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{yaw()}{yaw()}}
+{\footnotesize\ttfamily void Transform\+Component\+::yaw (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Yaw \+: \mbox{\hyperlink{class_this}{This}} will rotate the game object by the angle around the Z-\/\+Axis. Param One \+: \mbox{\hyperlink{class_the}{The}} angle of which to rotate by. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_transform_component_a70f27f66f621e0e52e96e40ec168ede2}\label{class_transform_component_a70f27f66f621e0e52e96e40ec168ede2}} 
+\index{Transform\+Component@{Transform\+Component}!m\+\_\+orientation@{m\+\_\+orientation}}
+\index{m\+\_\+orientation@{m\+\_\+orientation}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+orientation}{m\_orientation}}
+{\footnotesize\ttfamily glm\+::quat Transform\+Component\+::m\+\_\+orientation}
+
+\mbox{\Hypertarget{class_transform_component_a5a441b52ff5f18d940e3351e35868481}\label{class_transform_component_a5a441b52ff5f18d940e3351e35868481}} 
+\index{Transform\+Component@{Transform\+Component}!m\+\_\+position@{m\+\_\+position}}
+\index{m\+\_\+position@{m\+\_\+position}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+position}{m\_position}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+Component\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_transform_component_a50d168d6290b29a66b21ce576fa44d59}\label{class_transform_component_a50d168d6290b29a66b21ce576fa44d59}} 
+\index{Transform\+Component@{Transform\+Component}!m\+\_\+scale@{m\+\_\+scale}}
+\index{m\+\_\+scale@{m\+\_\+scale}!Transform\+Component@{Transform\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+scale}{m\_scale}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+Component\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_transform_component_8h}{Transform\+Component.\+h}}\end{DoxyCompactItemize}

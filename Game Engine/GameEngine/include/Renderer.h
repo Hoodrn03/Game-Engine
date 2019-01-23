@@ -48,4 +48,11 @@ public:
 	*Param Two : The current engine core for the game. 
 	*/
 	void m_Render(std::vector<GameObject> &drawable, IEngineCore *core);
+
+	//-----------------------------------------------------------//
+	/*! Render : This will render the game object passed into it.
+	*Param One : A list of game objects to render.
+	*Param Two : The current engine core for the game.
+	*/
+	void m_Render(std::vector<GameObject*> drawable, IEngineCore *core);
 };

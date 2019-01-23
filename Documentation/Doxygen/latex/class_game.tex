@@ -1,0 +1,106 @@
+\hypertarget{class_game}{}\section{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\item 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\item 
+void \mbox{\hyperlink{class_game_af7a9000e9370aa423ee3b5dda9620d54}{m\+\_\+\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_game_a273123d60e201675b10125e5fd6924c0}{m\+\_\+\+Update\+Rotation}} (float x\+Angle, float y\+Angle)
+\item 
+void \mbox{\hyperlink{class_game_a7150c86176921b18dd884498085ea699}{m\+\_\+\+Render}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_engine_core}{I\+Engine\+Core}} $\ast$ \mbox{\hyperlink{class_game_ad01d32edc479a3edc79e5a3d7b4281d2}{m\+\_\+engine\+Interface\+Ptr}}
+\item 
+\mbox{\hyperlink{struct_input_handler}{Input\+Handler}} $\ast$ \mbox{\hyperlink{class_game_a001f55f492c3fbafe8cf27eb04df293c}{m\+\_\+input\+Handler}}
+\item 
+float \mbox{\hyperlink{class_game_a8c30d8841546c309f40a8e128d1e9207}{m\+\_\+dt}} = 0
+\item 
+double \mbox{\hyperlink{class_game_a64c09b759d06281923ae87570620795b}{m\+\_\+\+Current\+Time}}
+\item 
+double \mbox{\hyperlink{class_game_a6b2f92aca705413c653acde07745a97e}{m\+\_\+\+Last\+Time}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}\label{class_game_ad59df6562a58a614fda24622d3715b65}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
+\index{Game@{Game}!````~Game@{$\sim$\+Game}}
+\index{````~Game@{$\sim$\+Game}!Game@{Game}}
+\subsubsection{\texorpdfstring{$\sim$\+Game()}{~Game()}}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deconstructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_a7150c86176921b18dd884498085ea699}\label{class_game_a7150c86176921b18dd884498085ea699}} 
+\index{Game@{Game}!m\+\_\+\+Render@{m\+\_\+\+Render}}
+\index{m\+\_\+\+Render@{m\+\_\+\+Render}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Render()}{m\_Render()}}
+{\footnotesize\ttfamily void Game\+::m\+\_\+\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Render \+: Will draw all items at the end of the frame. \mbox{\Hypertarget{class_game_af7a9000e9370aa423ee3b5dda9620d54}\label{class_game_af7a9000e9370aa423ee3b5dda9620d54}} 
+\index{Game@{Game}!m\+\_\+\+Update@{m\+\_\+\+Update}}
+\index{m\+\_\+\+Update@{m\+\_\+\+Update}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Update()}{m\_Update()}}
+{\footnotesize\ttfamily void Game\+::m\+\_\+\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update \+: Called once every frame. \mbox{\Hypertarget{class_game_a273123d60e201675b10125e5fd6924c0}\label{class_game_a273123d60e201675b10125e5fd6924c0}} 
+\index{Game@{Game}!m\+\_\+\+Update\+Rotation@{m\+\_\+\+Update\+Rotation}}
+\index{m\+\_\+\+Update\+Rotation@{m\+\_\+\+Update\+Rotation}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Update\+Rotation()}{m\_UpdateRotation()}}
+{\footnotesize\ttfamily void Game\+::m\+\_\+\+Update\+Rotation (\begin{DoxyParamCaption}\item[{float}]{x\+Angle,  }\item[{float}]{y\+Angle }\end{DoxyParamCaption})}
+
+Update Rotation \+: \mbox{\hyperlink{class_this}{This}} will be used to update the rotation of the main game objets. Param One \+: \mbox{\hyperlink{class_the}{The}} direction of the mouse on the X axis. Param Two \+: \mbox{\hyperlink{class_the}{The}} direction of the mouse on the Y axis. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_a64c09b759d06281923ae87570620795b}\label{class_game_a64c09b759d06281923ae87570620795b}} 
+\index{Game@{Game}!m\+\_\+\+Current\+Time@{m\+\_\+\+Current\+Time}}
+\index{m\+\_\+\+Current\+Time@{m\+\_\+\+Current\+Time}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Current\+Time}{m\_CurrentTime}}
+{\footnotesize\ttfamily double Game\+::m\+\_\+\+Current\+Time}
+
+\mbox{\Hypertarget{class_game_a8c30d8841546c309f40a8e128d1e9207}\label{class_game_a8c30d8841546c309f40a8e128d1e9207}} 
+\index{Game@{Game}!m\+\_\+dt@{m\+\_\+dt}}
+\index{m\+\_\+dt@{m\+\_\+dt}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+dt}{m\_dt}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+dt = 0}
+
+\mbox{\Hypertarget{class_game_ad01d32edc479a3edc79e5a3d7b4281d2}\label{class_game_ad01d32edc479a3edc79e5a3d7b4281d2}} 
+\index{Game@{Game}!m\+\_\+engine\+Interface\+Ptr@{m\+\_\+engine\+Interface\+Ptr}}
+\index{m\+\_\+engine\+Interface\+Ptr@{m\+\_\+engine\+Interface\+Ptr}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+engine\+Interface\+Ptr}{m\_engineInterfacePtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_engine_core}{I\+Engine\+Core}}$\ast$ Game\+::m\+\_\+engine\+Interface\+Ptr}
+
+\mbox{\Hypertarget{class_game_a001f55f492c3fbafe8cf27eb04df293c}\label{class_game_a001f55f492c3fbafe8cf27eb04df293c}} 
+\index{Game@{Game}!m\+\_\+input\+Handler@{m\+\_\+input\+Handler}}
+\index{m\+\_\+input\+Handler@{m\+\_\+input\+Handler}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+input\+Handler}{m\_inputHandler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_input_handler}{Input\+Handler}}$\ast$ Game\+::m\+\_\+input\+Handler}
+
+\mbox{\Hypertarget{class_game_a6b2f92aca705413c653acde07745a97e}\label{class_game_a6b2f92aca705413c653acde07745a97e}} 
+\index{Game@{Game}!m\+\_\+\+Last\+Time@{m\+\_\+\+Last\+Time}}
+\index{m\+\_\+\+Last\+Time@{m\+\_\+\+Last\+Time}!Game@{Game}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Last\+Time}{m\_LastTime}}
+{\footnotesize\ttfamily double Game\+::m\+\_\+\+Last\+Time}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_game_8h}{Game.\+h}}\end{DoxyCompactItemize}

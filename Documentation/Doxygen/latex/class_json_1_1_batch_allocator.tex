@@ -1,0 +1,58 @@
+\hypertarget{class_json_1_1_batch_allocator}{}\section{Json\+:\+:Batch\+Allocator$<$ Allocated\+Type, object\+Per\+Allocation $>$ Class Template Reference}
+\label{class_json_1_1_batch_allocator}\index{Json\+::\+Batch\+Allocator$<$ Allocated\+Type, object\+Per\+Allocation $>$@{Json\+::\+Batch\+Allocator$<$ Allocated\+Type, object\+Per\+Allocation $>$}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_json_1_1_batch_allocator_a96aae4d9032847b074e72a0cf32bc9ea}{Batch\+Allocator}} (unsigned int objects\+Per\+Page=255)
+\item 
+\mbox{\hyperlink{class_json_1_1_batch_allocator_a823a98097ec40ccc8d88da9378be228d}{$\sim$\+Batch\+Allocator}} ()
+\item 
+Allocated\+Type $\ast$ \mbox{\hyperlink{class_json_1_1_batch_allocator_a4909756c2d33bd0f07662e88e4f850dd}{allocate}} ()
+\item 
+void \mbox{\hyperlink{class_json_1_1_batch_allocator_aceb116aceb6bb5bbcfd05433abc04ba5}{release}} (Allocated\+Type $\ast$object)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_batch_allocator_a96aae4d9032847b074e72a0cf32bc9ea}\label{class_json_1_1_batch_allocator_a96aae4d9032847b074e72a0cf32bc9ea}} 
+\index{Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}!Batch\+Allocator@{Batch\+Allocator}}
+\index{Batch\+Allocator@{Batch\+Allocator}!Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}}
+\subsubsection{\texorpdfstring{Batch\+Allocator()}{BatchAllocator()}}
+{\footnotesize\ttfamily template$<$typename Allocated\+Type , const unsigned int object\+Per\+Allocation$>$ \\
+\mbox{\hyperlink{class_json_1_1_batch_allocator}{Json\+::\+Batch\+Allocator}}$<$ Allocated\+Type, object\+Per\+Allocation $>$\+::\mbox{\hyperlink{class_json_1_1_batch_allocator}{Batch\+Allocator}} (\begin{DoxyParamCaption}\item[{unsigned int}]{objects\+Per\+Page = {\ttfamily 255} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_json_1_1_batch_allocator_a823a98097ec40ccc8d88da9378be228d}\label{class_json_1_1_batch_allocator_a823a98097ec40ccc8d88da9378be228d}} 
+\index{Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}!````~Batch\+Allocator@{$\sim$\+Batch\+Allocator}}
+\index{````~Batch\+Allocator@{$\sim$\+Batch\+Allocator}!Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}}
+\subsubsection{\texorpdfstring{$\sim$\+Batch\+Allocator()}{~BatchAllocator()}}
+{\footnotesize\ttfamily template$<$typename Allocated\+Type , const unsigned int object\+Per\+Allocation$>$ \\
+\mbox{\hyperlink{class_json_1_1_batch_allocator}{Json\+::\+Batch\+Allocator}}$<$ Allocated\+Type, object\+Per\+Allocation $>$\+::$\sim$\mbox{\hyperlink{class_json_1_1_batch_allocator}{Batch\+Allocator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_batch_allocator_a4909756c2d33bd0f07662e88e4f850dd}\label{class_json_1_1_batch_allocator_a4909756c2d33bd0f07662e88e4f850dd}} 
+\index{Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}!allocate@{allocate}}
+\index{allocate@{allocate}!Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}}
+\subsubsection{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename Allocated\+Type , const unsigned int object\+Per\+Allocation$>$ \\
+Allocated\+Type$\ast$ \mbox{\hyperlink{class_json_1_1_batch_allocator}{Json\+::\+Batch\+Allocator}}$<$ Allocated\+Type, object\+Per\+Allocation $>$\+::allocate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+allocate space for an array of object\+Per\+Allocation object. \begin{DoxyWarning}{Warning}
+it is the responsability of the caller to call objects constructors. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_json_1_1_batch_allocator_aceb116aceb6bb5bbcfd05433abc04ba5}\label{class_json_1_1_batch_allocator_aceb116aceb6bb5bbcfd05433abc04ba5}} 
+\index{Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}!release@{release}}
+\index{release@{release}!Json\+::\+Batch\+Allocator@{Json\+::\+Batch\+Allocator}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily template$<$typename Allocated\+Type , const unsigned int object\+Per\+Allocation$>$ \\
+void \mbox{\hyperlink{class_json_1_1_batch_allocator}{Json\+::\+Batch\+Allocator}}$<$ Allocated\+Type, object\+Per\+Allocation $>$\+::release (\begin{DoxyParamCaption}\item[{Allocated\+Type $\ast$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Release the object. \begin{DoxyWarning}{Warning}
+it is the responsability of the caller to actually destruct the object. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/src/\mbox{\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}}\end{DoxyCompactItemize}

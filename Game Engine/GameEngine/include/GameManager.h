@@ -22,9 +22,9 @@ public:
 	*/
 	GameManager() 
 	{
-		GameObject *l_TempObject = new GameObject; 
-
 		// Create The player object. 
+
+		GameObject *l_TempObject = new GameObject();
 
 		l_TempObject->addComponent(new TransformComponent(glm::vec3(0, 0, 2)));
 		l_TempObject->addComponent(new ModelComponent(new Model("assets/models/Cube.obj")));
@@ -33,12 +33,12 @@ public:
 
 		v_GameObjects.push_back(l_TempObject); 
 
-		l_TempObject = new GameObject;
-
 		// Create the main camera object. 
 		
+		l_TempObject = new GameObject();
+
 		l_TempObject->addComponent(new TransformComponent());
-		l_TempObject->addComponent(new CameraComponent(new Camera(), v_GameObjects[0], firstPersonCamera)); 
+		l_TempObject->addComponent(new CameraComponent(new Camera(), m_GetPlayerObject(), thirdPersonCamera));
 		l_TempObject->m_id = "Camera";
 
 		v_GameObjects.push_back(l_TempObject);
@@ -61,6 +61,12 @@ private:
 	// Member Functions
 
 public:
+
+	//-----------------------------------------------------------//
+	/*! GetGameObjects : This will be used to get the vector of game objects. 
+	*
+	*/
+	std::vector<GameObject*> m_GetGameObjects() { return v_GameObjects; }
 
 	//-----------------------------------------------------------//
 	/*! GetGameObject : This will be used to get a specific game object.  
@@ -151,6 +157,8 @@ public:
 	*/
 	void RotateWithMouse(float moveX, float moveY)
 	{
+		// Check the rotation in the X axis (left and right). 
+
 		if (moveX != 0)
 		{
 			if (v_GameObjects.size() > 0)
@@ -177,6 +185,8 @@ public:
 				}
 			}
 		}
+
+		// Check the rotation in the Y axis (Up and Down). 
 
 		if (moveY != 0)
 		{

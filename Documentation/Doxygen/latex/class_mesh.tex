@@ -1,0 +1,74 @@
+\hypertarget{class_mesh}{}\section{Mesh Class Reference}
+\label{class_mesh}\index{Mesh@{Mesh}}
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_a2d6c71adb66e5f270cee7a60c4e23018}{Mesh}} (vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$ \mbox{\hyperlink{class_mesh_abe5c05c224e47ba1e8b6393759798a9b}{vertices}}, vector$<$ unsigned int $>$ \mbox{\hyperlink{class_mesh_a464d9a1d7e7a4f67321dffc1e8b44b7d}{indices}}, vector$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$ \mbox{\hyperlink{class_mesh_a09bf4e8307bf7717c56501ca6293c6c0}{textures}})
+\item 
+void \mbox{\hyperlink{class_mesh_a9a6ec018bec776cb7b31fb8433c8a7e7}{render}} (const unsigned int shader\+Program)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$ \mbox{\hyperlink{class_mesh_abe5c05c224e47ba1e8b6393759798a9b}{vertices}}
+\item 
+vector$<$ unsigned int $>$ \mbox{\hyperlink{class_mesh_a464d9a1d7e7a4f67321dffc1e8b44b7d}{indices}}
+\item 
+vector$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$ \mbox{\hyperlink{class_mesh_a09bf4e8307bf7717c56501ca6293c6c0}{textures}}
+\item 
+unsigned int \mbox{\hyperlink{class_mesh_a79afa055e485fb65b1a7aa5b8eda2940}{V\+AO}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mesh_a2d6c71adb66e5f270cee7a60c4e23018}\label{class_mesh_a2d6c71adb66e5f270cee7a60c4e23018}} 
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$}]{vertices,  }\item[{vector$<$ unsigned int $>$}]{indices,  }\item[{vector$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$}]{textures }\end{DoxyParamCaption})}
+
+Constructor Param One \+: A list of verices used by the model. Param Two \+: A list of indices used by the model. Param Three \+: \mbox{\hyperlink{class_the}{The}} list of textures for the model. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_a9a6ec018bec776cb7b31fb8433c8a7e7}\label{class_mesh_a9a6ec018bec776cb7b31fb8433c8a7e7}} 
+\index{Mesh@{Mesh}!render@{render}}
+\index{render@{render}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Mesh\+::render (\begin{DoxyParamCaption}\item[{const unsigned int}]{shader\+Program }\end{DoxyParamCaption})}
+
+Render \+: Render the mesh with a given shader program Param One \+: \mbox{\hyperlink{class_the}{The}} current shader program being used. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_mesh_a464d9a1d7e7a4f67321dffc1e8b44b7d}\label{class_mesh_a464d9a1d7e7a4f67321dffc1e8b44b7d}} 
+\index{Mesh@{Mesh}!indices@{indices}}
+\index{indices@{indices}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{indices}{indices}}
+{\footnotesize\ttfamily vector$<$unsigned int$>$ Mesh\+::indices}
+
+\mbox{\Hypertarget{class_mesh_a09bf4e8307bf7717c56501ca6293c6c0}\label{class_mesh_a09bf4e8307bf7717c56501ca6293c6c0}} 
+\index{Mesh@{Mesh}!textures@{textures}}
+\index{textures@{textures}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_texture}{Texture}}$>$ Mesh\+::textures}
+
+\mbox{\Hypertarget{class_mesh_a79afa055e485fb65b1a7aa5b8eda2940}\label{class_mesh_a79afa055e485fb65b1a7aa5b8eda2940}} 
+\index{Mesh@{Mesh}!V\+AO@{V\+AO}}
+\index{V\+AO@{V\+AO}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{V\+AO}{VAO}}
+{\footnotesize\ttfamily unsigned int Mesh\+::\+V\+AO}
+
+\mbox{\Hypertarget{class_mesh_abe5c05c224e47ba1e8b6393759798a9b}\label{class_mesh_abe5c05c224e47ba1e8b6393759798a9b}} 
+\index{Mesh@{Mesh}!vertices@{vertices}}
+\index{vertices@{vertices}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{vertices}{vertices}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_vertex}{Vertex}}$>$ Mesh\+::vertices}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Engine/include/\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}}\end{DoxyCompactItemize}
